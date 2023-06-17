@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+}
+
+.text-area{
+    width: 50%;
+    height: 100vh;
+    padding: 20px;
+    outline: none;
+}
+
+.mark-down{
+    width: 50%;
+    height: 100vh;
+    padding: 20px;
+}

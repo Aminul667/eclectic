@@ -6,26 +6,27 @@ import remarkMath from "remark-math";
 
 // css
 import "katex/dist/katex.min.css";
+import "./NewPost.css";
 import HighlightSyntax from "../HighlightSyntax/HighlightSyntax";
 
 const NewPost = () => {
   const [input, setInput] = useState();
 
   return (
-    <div>
-      <div>
-        <textarea
-          autoFocus
-          value={input}
-          cols="30"
-          rows="10"
-          onChange={(e) => setInput(e.target.value)}
-        ></textarea>
-      </div>
+    <div className="container">
+      <textarea
+        className="text-area"
+        autoFocus
+        value={input}
+        cols="30"
+        rows="10"
+        onChange={(e) => setInput(e.target.value)}
+      ></textarea>
       <ReactMarkdown
         remarkPlugins={[remarkGfm, remarkMath]}
         rehypePlugins={[rehypeKatex]}
         components={{ code: HighlightSyntax }}
+        className="mark-down"
       >
         {input}
       </ReactMarkdown>
