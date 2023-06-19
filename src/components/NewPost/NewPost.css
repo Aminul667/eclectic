@@ -1,16 +1,25 @@
 .container{
     display: flex;
+    /* background-color: aqua; */
+}
+
+.form{
+    width: 50%;
+    /* background-color: blueviolet; */
 }
 
 .text-area{
-    width: 50%;
-    height: 100vh;
+    width: 100%;
+    /* height: 100vh; */
+    box-sizing: border-box;
     padding: 20px;
     outline: none;
+    /* background-color: brown; */
 }
 
 .mark-down{
     width: 50%;
-    height: 100vh;
+    /* height: 100vh; */
     padding: 20px;
+    /* background-color: burlywood; */
 }
