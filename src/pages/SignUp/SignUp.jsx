@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import "./SignUp.css";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const {
@@ -84,12 +85,19 @@ const SignUp = () => {
           </label>
           <input
             type="email"
-            {...register("email", { required: true })}
+            {...register("email", {
+              required: true,
+              validate: {
+                matchPattern: (v) =>
+                  /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
+                  "Email address must be a valid address",
+              },
+            })}
             name="email"
             // placeholder="Name"
             className="input-section"
           />
-          {errors.email && <span>Email is required</span>}
+          {errors.email?.message && <small>{errors.email.message}</small>}
         </div>
 
         {/* password */}
@@ -101,24 +109,30 @@ const SignUp = () => {
             type="password"
             {...register("password", {
               required: true,
-              minLength: 6,
-              maxLength: 20,
-              pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
+
+              validate: {
+                maxLength: (v) =>
+                  v.length >= 8 || "Password should be at least 8 character",
+                matchPattern: (v) =>
+                  /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/.test(v) ||
+                  "Password should contain at least one upper case latter, one lowercase latter and one special character",
+              },
             })}
             name="password"
             // placeholder="Name"
             className="input-section"
           />
-          {/* {errors.password?.type === "required" && (
-            <span className="">Password is required</span>
-          )} */}
           <span>{errors.password?.message}</span>
         </div>
 
-        <div className="">
-          <input className="" type="submit" value="Sign Up" />
+        <div>
+          <input className="btn btn-primary" type="submit" value="Sign Up" />
         </div>
       </form>
+      <div className="login-container">
+        <p>Already have an account?</p>
+        <Link to="/login" className="link-login">Login</Link>
+      </div>
     </div>
   );
 };
