@@ -23,7 +23,7 @@ const NewPost = () => {
   return (
     <>
       <div className="container">
-        <div className="form">
+        <div className="new-post-form">
           <form onSubmit={handleSave}>
             <textarea
               className="text-area"

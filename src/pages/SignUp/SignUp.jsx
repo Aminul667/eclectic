@@ -1,6 +1,9 @@
 import { useForm } from "react-hook-form";
 import "./SignUp.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import axios from "axios";
 
 const SignUp = () => {
   const {
@@ -10,8 +13,32 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
 
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
+    createUser(data.email, data.password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log("loggedUser", loggedUser);
+        updateUserProfile(data.name, data.photoUrl).then(() => {
+          const savedUser = { name: data.name, email: data.email };
+          axios.post("http://localhost:5000/users", savedUser).then((data) => {
+            if (data.data.insertedId) {
+              // reset();
+              alert("User Created Successfully");
+            }
+            navigate("/");
+          });
+        });
+      })
+      .catch((error) => {
+        if(error){
+          alert("User already exists. Please login!")
+        }
+      });
+
     // createUser(data.email, data.password).then((result) => {
     //   const loggedUser = result.user;
     //   console.log(loggedUser);
@@ -131,7 +158,9 @@ const SignUp = () => {
       </form>
       <div className="login-container">
         <p>Already have an account?</p>
-        <Link to="/login" className="link-login">Login</Link>
+        <Link to="/login" className="link-login">
+          Login
+        </Link>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 const axiosSecure = axios.create({
-  baseURL: "https://bistro-boss-m74-server-aminul667",
+  baseURL: "http://localhost:5000",
 });
 
 const useAxiosSecure = () => {
