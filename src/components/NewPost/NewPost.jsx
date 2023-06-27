@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import rehypeKatex from "rehype-katex";
 import remarkGfm from "remark-gfm";
@@ -8,18 +8,43 @@ import remarkMath from "remark-math";
 import "katex/dist/katex.min.css";
 import "./NewPost.css";
 import HighlightSyntax from "../HighlightSyntax/HighlightSyntax";
+import { format } from "date-fns";
+import { AuthContext } from "../../providers/AuthProvider";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const NewPost = () => {
+  const { user } = useContext(AuthContext);
   const [text, setText] = useState();
+  const navigate = useNavigate();
+
+  // console.log("From Post", user);
 
   const handleSave = (event) => {
     event.preventDefault();
     const form = event.target;
-    const textarea = form.textarea.value;
     const title = form.title.value;
+    const textarea = form.textarea.value;
+    const date = new Date();
+    const formattedDate = format(date, "MMMM do, yyyy H:mma");
+
+    const savedPost = {
+      author: user.displayName,
+      email: user.email,
+      photo: user.photoURL,
+      title: title,
+      date: formattedDate,
+      post: textarea,
+    };
     console.log("From textarea:");
-    console.log(title);
-    console.log(textarea);
+    console.log(savedPost);
+    axios.post("http://localhost:5000/posts", savedPost).then((data) => {
+            if (data.data.insertedId) {
+              // reset();
+              alert("Blog has been posted");
+            }
+            navigate("/");
+          });
   };
 
   return (
