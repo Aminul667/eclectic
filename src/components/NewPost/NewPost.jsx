@@ -10,29 +10,41 @@ import "./NewPost.css";
 import HighlightSyntax from "../HighlightSyntax/HighlightSyntax";
 
 const NewPost = () => {
-  const [input, setInput] = useState();
+  const [text, setText] = useState();
 
   const handleSave = (event) => {
     event.preventDefault();
     const form = event.target;
     const textarea = form.textarea.value;
+    const title = form.title.value;
     console.log("From textarea:");
+    console.log(title);
     console.log(textarea);
   };
 
   return (
     <>
-      <div className="container">
+      <div className="new-post-container">
         <div className="new-post-form">
           <form onSubmit={handleSave}>
+            {/* form title */}
+            <div className="">
+              <input
+                type="text"
+                name="title"
+                required
+                placeholder="Title of the post"
+                className="input-section"
+              />
+            </div>
             <textarea
               className="text-area"
               autoFocus
               name="textarea"
-              value={input}
+              value={text}
               cols="30"
               rows="10"
-              onChange={(e) => setInput(e.target.value)}
+              onChange={(e) => setText(e.target.value)}
             ></textarea>
             <input type="submit" value="Save" />
           </form>
@@ -43,11 +55,11 @@ const NewPost = () => {
           components={{ code: HighlightSyntax }}
           className="mark-down"
         >
-          {input}
+          {text}
         </ReactMarkdown>
       </div>
       <div>
-        {input}
+        <div>{text}</div>
       </div>
     </>
   );
