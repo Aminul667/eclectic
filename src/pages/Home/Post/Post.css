@@ -1,16 +1,33 @@
+.post-container{
+    padding: 20px 30px;
+    margin: 20px 0px;
+    border-radius: 16px;
+    background-color: var(--color-dark);
+}
+
 .author-info{
+    margin-bottom: 16px;
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
 .img-author{
-    width: 100px;
-    height: 100px;
-    /* border: 1px solid red; */
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
 }
 
 .author-name{
     color: var(--color-main);
+    margin-bottom: 15px;
+}
+
+.post-title{
+    font-size: 30px;
+    /* margin-top: 16px; */
+}
+
+.post-title:hover{
+    color: var(--color-gray)
 }
