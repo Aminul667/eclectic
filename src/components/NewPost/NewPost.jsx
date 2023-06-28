@@ -36,6 +36,7 @@ const NewPost = () => {
       date: formattedDate,
       post: textarea,
     };
+    
     console.log("From textarea:");
     console.log(savedPost);
     axios.post("http://localhost:5000/posts", savedPost).then((data) => {

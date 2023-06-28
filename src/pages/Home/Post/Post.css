@@ -1,0 +1,16 @@
+.author-info{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.img-author{
+    width: 100px;
+    height: 100px;
+    /* border: 1px solid red; */
+    border-radius: 50%;
+}
+
+.author-name{
+    color: var(--color-main);
+}
