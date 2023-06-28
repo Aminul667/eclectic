@@ -23,9 +23,6 @@ const ReadPost = () => {
     },
   });
 
-  console.log(id);
-  console.log("ReadPost", post);
-
   return (
     <div className="read-container">
       <h2>Read the post here</h2>

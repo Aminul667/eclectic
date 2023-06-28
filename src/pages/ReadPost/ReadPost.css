@@ -1,9 +1,21 @@
 .read-container{
     margin: 20px 50px;
-    font-size: 20px;
 }
 
-.markdown-container > p{
-    margin-bottom: 15px;
+.markdown-container > p, li{
+    font-size: 20px;
+    margin: 20px 0px;
+    line-height: 30px;
+    letter-spacing: 1px;
     text-align: justify;
 }
+
+.arkdown-container > img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .markdown-container > h1, h2, h3, h4, h5, h6{
+    font-size: px;
+} */
