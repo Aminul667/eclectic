@@ -11,7 +11,7 @@ const Post = ({ post }) => {
           <p>{post.date}</p>
         </div>
       </div>
-      <Link className="post-title">{post.title}</Link>
+      <Link to={`blog/${post._id}`} state={{ id: post._id }} className="post-title">{post.title}</Link>
       {/* <h2 className="post-title">{post.title}</h2> */}
     </div>
   );

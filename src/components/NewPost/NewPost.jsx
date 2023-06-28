@@ -18,8 +18,6 @@ const NewPost = () => {
   const [text, setText] = useState();
   const navigate = useNavigate();
 
-  // console.log("From Post", user);
-
   const handleSave = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -37,8 +35,6 @@ const NewPost = () => {
       post: textarea,
     };
     
-    console.log("From textarea:");
-    console.log(savedPost);
     axios.post("http://localhost:5000/posts", savedPost).then((data) => {
             if (data.data.insertedId) {
               // reset();
@@ -83,9 +79,6 @@ const NewPost = () => {
         >
           {text}
         </ReactMarkdown>
-      </div>
-      <div>
-        <div>{text}</div>
       </div>
     </>
   );

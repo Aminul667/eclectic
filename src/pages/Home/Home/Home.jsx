@@ -16,9 +16,6 @@ const Home = () => {
     },
   });
 
-  console.log(posts);
-  console.log(isLoading);
-  console.log(isError);
   return (
     <div className="home-container">
       <h1>All Posts: {posts.length}</h1>

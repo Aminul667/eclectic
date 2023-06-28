@@ -5,7 +5,6 @@ import { AuthContext } from "../../../../providers/AuthProvider";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log("NavBar", user);
 
   const handleLogOut = () => {
     logOut()

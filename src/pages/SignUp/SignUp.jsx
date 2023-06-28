@@ -17,11 +17,9 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    // console.log(data);
     createUser(data.email, data.password)
       .then((result) => {
         const loggedUser = result.user;
-        console.log("loggedUser", loggedUser);
         updateUserProfile(data.name, data.photoUrl).then(() => {
           const savedUser = { name: data.name, email: data.email };
           axios.post("http://localhost:5000/users", savedUser).then((data) => {
