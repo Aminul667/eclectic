@@ -22,26 +22,30 @@ const NewPost = () => {
     event.preventDefault();
     const form = event.target;
     const title = form.title.value;
+    const category = form.category.value;
     const textarea = form.textarea.value;
     const date = new Date();
     const formattedDate = format(date, "MMMM do, yyyy H:mma");
+
+    // console.log(category)
 
     const savedPost = {
       author: user.displayName,
       email: user.email,
       photo: user.photoURL,
       title: title,
+      category: category,
       date: formattedDate,
       post: textarea,
     };
-    
+
     axios.post("http://localhost:5000/posts", savedPost).then((data) => {
-            if (data.data.insertedId) {
-              // reset();
-              alert("Blog has been posted");
-            }
-            navigate("/");
-          });
+      if (data.data.insertedId) {
+        // reset();
+        alert("Blog has been posted");
+      }
+      navigate("/");
+    });
   };
 
   return (
@@ -59,6 +63,19 @@ const NewPost = () => {
                 className="input-section"
               />
             </div>
+            <div>
+              <select name="category" className="select-section">
+                <option value="select-category" className="option">--Please select an category--</option>
+                <option value="art" className="option">Art</option>
+                <option value="mathematics" className="option">Mathematics</option>
+                <option value="science" className="option">Science</option>
+                <option value="technology" className="option">Technology</option>
+                <option value="coding" className="option">Coding</option>
+                <option value="algorithm" className="option">Algorithm</option>
+                <option value="data-structure" className="option">Data Structure</option>
+                <option value="other" className="option">Other</option>
+              </select>
+            </div>
             <textarea
               className="text-area"
               autoFocus
@@ -66,9 +83,10 @@ const NewPost = () => {
               value={text}
               cols="30"
               rows="10"
+              required
               onChange={(e) => setText(e.target.value)}
             ></textarea>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Save" className="btn btn-primary"/>
           </form>
         </div>
         <ReactMarkdown
