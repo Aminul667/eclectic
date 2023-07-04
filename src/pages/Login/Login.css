@@ -2,3 +2,8 @@
     color: white;
     background-color: #2d2d39;
 } */
+
+.signin-error{
+    margin-bottom: 8px;
+    color: red;
+}

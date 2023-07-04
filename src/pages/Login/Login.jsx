@@ -1,11 +1,13 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import './Login.css';
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  const [signInError, setSignInError] = useState("");
 
   const from = location.state?.from?.pathname || "/";
 
@@ -15,12 +17,14 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    signIn(email, password).then((result) => {
-      const user = result.user;
-      
-      alert("User logged in successfully")
-      navigate(from, { replace: true });
-    });
+    signIn(email, password)
+      .then((result) => {
+        const user = result.user;
+
+        alert("User logged in successfully");
+        navigate(from, { replace: true });
+      })
+      .catch((error) => setSignInError(error.code));
   };
 
   return (
@@ -41,10 +45,22 @@ const Login = () => {
           </label>
           <input type="password" name="password" className="input-section" />
         </div>
+        {signInError === "auth/wrong-password" ? (
+          <p className="signin-error">Wrong Password</p>
+        ) : (
+          <p className="signin-error">User Not Found</p>
+        )}
         <div>
           <input className="btn btn-primary" type="submit" value="Login" />
         </div>
       </form>
+      {/* <div>
+        {signInError === "auth/wrong-password" ? (
+          <p>Wrong Password</p>
+        ) : (
+          <p>User Not Found</p>
+        )}
+      </div> */}
       <div className="login-container">
         <p>Dont have an account?</p>
         <Link to="/signup" className="link-login">
