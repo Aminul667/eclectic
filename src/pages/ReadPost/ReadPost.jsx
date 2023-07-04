@@ -25,7 +25,7 @@ const ReadPost = () => {
 
   return (
     <div className="read-container">
-      <h2>Read the post here</h2>
+      <h1 className="post-title">{post.title}</h1>
       <div className="markdown-container">
         <ReactMarkdown
           remarkPlugins={[remarkGfm, remarkMath]}
@@ -34,6 +34,10 @@ const ReadPost = () => {
         >
           {post.post}
         </ReactMarkdown>
+      </div>
+      <div className="writer-info">
+        <p>{post.author}</p>
+        <p>{post.date}</p>
       </div>
     </div>
   );

@@ -1,17 +1,38 @@
-.read-container{
-    margin: 20px 50px;
+.read-container {
+  margin: 20px 50px;
 }
 
-.markdown-container > p, li{
-    font-size: 20px;
-    margin: 20px 0px;
-    line-height: 30px;
-    letter-spacing: 1px;
-    text-align: justify;
+.post-title {
+  font-size: 35px;
+  text-align: center;
+  padding: 16px 0px;
+  margin-bottom: 60px;
+  border-top: 2px solid var(--color-dark-light);
+  border-bottom: 2px solid var(--color-dark-light);
 }
 
-.arkdown-container > img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.markdown-container > p,
+li {
+  /* font-size: 16px; */
+  margin: 20px 0px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  text-align: justify;
+}
+
+.markdown-container > h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.writer-info{
+    text-align: right;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 15px;
 }

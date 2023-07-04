@@ -23,11 +23,11 @@
     margin-bottom: 15px;
 }
 
-.post-title{
+.post-link-title{
     font-size: 30px;
     /* margin-top: 16px; */
 }
 
-.post-title:hover{
+.post-link-title:hover{
     color: var(--color-gray)
 }
