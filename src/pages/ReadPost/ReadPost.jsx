@@ -24,7 +24,7 @@ const ReadPost = () => {
   });
 
   return (
-    <div className="read-container">
+    <div>
       <h1 className="post-title">{post.title}</h1>
       <div className="markdown-container">
         <ReactMarkdown

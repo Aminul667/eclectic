@@ -18,12 +18,17 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h1>All Posts: {posts.length}</h1>
-      {posts.map((post) => (
-        <Post 
-          key={post._id}
-          post={post}></Post>
-      ))}
+      <div className="category-container">
+        <h2>Category</h2>
+        <p>All</p>
+        <p>Mathematics</p>
+      </div>
+      <div>
+        <h1>All Posts: {posts.length}</h1>
+        {posts.map((post) => (
+          <Post key={post._id} post={post}></Post>
+        ))}
+      </div>
     </div>
   );
 };

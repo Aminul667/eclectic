@@ -1,6 +1,6 @@
-.read-container {
+/* .read-container {
   margin: 20px 50px;
-}
+} */
 
 .post-title {
   font-size: 35px;
@@ -12,7 +12,7 @@
 }
 
 .markdown-container > p,
-li {
+.markdown-container > li {
   /* font-size: 16px; */
   margin: 20px 0px;
   line-height: 30px;
@@ -21,18 +21,18 @@ li {
 }
 
 .markdown-container > h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.markdown-container > h2,
+.markdown-container > h3,
+.markdown-container > h4,
+.markdown-container > h5,
+.markdown-container > h6 {
   margin-top: 50px;
   margin-bottom: 20px;
 }
 
-.writer-info{
-    text-align: right;
-    font-size: 12px;
-    font-style: italic;
-    margin-top: 15px;
+.writer-info {
+  text-align: right;
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 15px;
 }

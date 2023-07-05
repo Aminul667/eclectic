@@ -61,6 +61,10 @@ body {
   background-color: #2d2d39;
 }
 
+.container{
+  margin: 20px 50px;
+}
+
 .btn-primary {
   color: var(--color-dark);
   padding: 10px;
