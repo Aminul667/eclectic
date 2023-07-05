@@ -12,7 +12,6 @@ const Post = ({ post }) => {
         </div>
       </div>
       <Link to={`blog/${post._id}`} state={{ id: post._id }} className="post-link-title">{post.title}</Link>
-      {/* <h2 className="post-title">{post.title}</h2> */}
     </div>
   );
 };

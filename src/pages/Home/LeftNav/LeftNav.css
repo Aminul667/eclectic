@@ -1,0 +1,6 @@
+.category-container{
+    padding: 20px 30px;
+    /* margin: 20px 0px; */
+    border-radius: 16px;
+    background-color: var(--color-dark);
+}

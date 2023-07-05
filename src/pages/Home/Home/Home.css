@@ -1,12 +1,11 @@
 .home-container{
     display: grid;
-    grid-template-columns: 1fr 6fr;
+    grid-template-columns: 1fr 5fr;
     column-gap: 20px;
 }
 
-.category-container{
+/* .category-container{
     padding: 20px 30px;
-    /* margin: 20px 0px; */
     border-radius: 16px;
     background-color: var(--color-dark);
-}
+} */
