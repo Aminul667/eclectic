@@ -18,9 +18,9 @@ const LeftNav = () => {
     <div className="category-container">
       <h2>Category</h2>
       {categories.map((category) => (
-        <p key={categories.indexOf(category)}>
+        <button key={categories.indexOf(category)} className="post-category">
           <Link>{categoriesObject[category]}</Link>
-        </p>
+        </button>
       ))}
     </div>
   );
