@@ -30,9 +30,9 @@ const NavBar = () => {
           <Link to="/category/my-posts" className="group-link">
             My Posts
           </Link>
-          <Link to="/article/create-article" className="group-link">
+          {/* <Link to="/article/create-article" className="group-link">
             New Post
-          </Link>
+          </Link> */}
         </div>
         <div className="profile-container">
           <img src={user?.photoURL} className="profile-img" />

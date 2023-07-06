@@ -51,7 +51,7 @@ const Home = () => {
       <LeftNav></LeftNav>
       <div>
         <div className="container-info">
-          <h1>All Articles: {posts.length}</h1>
+          <h1>Articles: {posts.length}</h1>
           <button className="btn-article" onClick={handleNavigate}>
             Write a new article
           </button>
