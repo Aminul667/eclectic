@@ -1,11 +1,12 @@
 import "./Home.css";
 import Post from "../Post/Post";
-import {  useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import LeftNav from "../LeftNav/LeftNav";
 
 const Home = () => {
   const { id } = useParams();
   const posts = useLoaderData();
+  const navigate = useNavigate();
 
   // const {
   //   data: posts = [],
@@ -20,8 +21,8 @@ const Home = () => {
   //   },
   // });
 
-  console.log("from Home",id)
-  console.log('home',posts)
+  console.log("from Home", id);
+  console.log("home", posts);
 
   // const categories = ['all', 'art', 'mathematics', 'science', 'technology', 'coding', 'algorithm', 'data-structure', 'other']
 
@@ -41,12 +42,20 @@ const Home = () => {
   // console.log(categories);
 
   // categories.map((category) => console.log(categories.indexOf(category)));
+  const handleNavigate = () => {
+    navigate("/article/create-article");
+  };
 
   return (
     <div className="home-container">
       <LeftNav></LeftNav>
       <div>
-        <h1>All Posts: {posts.length}</h1>
+        <div className="container-info">
+          <h1>All Articles: {posts.length}</h1>
+          <button className="btn-article" onClick={handleNavigate}>
+            Write a new article
+          </button>
+        </div>
         {posts.map((post) => (
           <Post key={post._id} post={post}></Post>
         ))}

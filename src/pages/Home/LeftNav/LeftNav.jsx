@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import './LeftNav.css'
+import "./LeftNav.css";
 
 const LeftNav = () => {
   const categoriesObject = {
@@ -16,11 +16,11 @@ const LeftNav = () => {
   const categories = Object.keys(categoriesObject);
   return (
     <div className="category-container">
-      <h2>Category</h2>
+      <h2 className="category-title">Category</h2>
       {categories.map((category) => (
-        <button key={categories.indexOf(category)} className="post-category">
+        <p key={categories.indexOf(category)} className="post-category">
           <Link to={`/category/${category}`}>{categoriesObject[category]}</Link>
-        </button>
+        </p>
       ))}
     </div>
   );

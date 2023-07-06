@@ -4,6 +4,29 @@
     column-gap: 20px;
 }
 
+.btn-article{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-dark);
+    padding: 16px 10px;
+    border: none;
+    display: block;
+    background-color: var(--color-main);
+    border-radius: 8px;
+}
+
+.btn-article:hover{
+    color: var(--color-light);
+    background-color: transparent;
+    border: 2px solid var(--color-main);
+}
+
+.container-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* .category-container{
     padding: 20px 30px;
     border-radius: 16px;

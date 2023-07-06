@@ -24,7 +24,7 @@ const NavBar = () => {
           <Link to="" className="group-link">
             Search
           </Link>
-          <Link to="/" className="group-link">
+          <Link to="/category/all" className="group-link">
             Home
           </Link>
           <Link to="/category/my-posts" className="group-link">
