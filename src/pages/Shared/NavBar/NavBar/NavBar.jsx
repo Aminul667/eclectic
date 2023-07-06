@@ -27,7 +27,7 @@ const NavBar = () => {
           <Link to="/" className="group-link">
             Home
           </Link>
-          <Link to="/my-posts" className="group-link">
+          <Link to="/category/my-posts" className="group-link">
             My Posts
           </Link>
           <Link to="/new-post" className="group-link">

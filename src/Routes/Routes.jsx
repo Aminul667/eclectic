@@ -6,15 +6,21 @@ import NewPost from "../components/NewPost/NewPost";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import ReadPost from "../pages/ReadPost/ReadPost";
+import LandingPage from "../pages/LandingPage/LandingPage/LandingPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <LandingPage></LandingPage>
+  },
+  {
+    path: "category",
     element: <Main></Main>,
     children: [
       {
-        path: "/",
+        path: ":id",
         element: <Home></Home>,
+        loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
       },
       {
         path: "my-posts",

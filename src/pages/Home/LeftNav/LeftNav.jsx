@@ -19,7 +19,7 @@ const LeftNav = () => {
       <h2>Category</h2>
       {categories.map((category) => (
         <button key={categories.indexOf(category)} className="post-category">
-          <Link>{categoriesObject[category]}</Link>
+          <Link to={`/category/${category}`}>{categoriesObject[category]}</Link>
         </button>
       ))}
     </div>
