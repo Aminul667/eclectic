@@ -61,6 +61,10 @@ const router = createBrowserRouter([
         path: ":id",
         element: <ReadPost></ReadPost>,
       },
+      {
+        path: 'create-article',
+        element: <NewPost></NewPost>
+      }
     ],
   },
 ]);

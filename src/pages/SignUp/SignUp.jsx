@@ -32,41 +32,10 @@ const SignUp = () => {
         });
       })
       .catch((error) => {
-        if(error){
-          alert("User already exists. Please login!")
+        if (error) {
+          alert("User already exists. Please login!");
         }
       });
-
-    // createUser(data.email, data.password).then((result) => {
-    //   const loggedUser = result.user;
-    //   console.log(loggedUser);
-    //   updateUserProfile(data.name, data.PhotoURL)
-    //     .then(() => {
-    //       const saveUser = { name: data.name, email: data.email };
-    //       fetch("https://bistro-boss-m74-server-aminul667.vercel.app/users", {
-    //         method: "POST",
-    //         headers: {
-    //           "content-type": "application/json",
-    //         },
-    //         body: JSON.stringify(saveUser),
-    //       })
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //           if (data.insertedId) {
-    //             reset();
-    //             Swal.fire({
-    //               position: "top-end",
-    //               icon: "success",
-    //               title: "User Created Successfully",
-    //               showConfirmButton: false,
-    //               timer: 1500,
-    //             });
-    //             navigate("/");
-    //           }
-    //         });
-    //     })
-    //     .catch((error) => console.log(error));
-    // });
   };
 
   return (
@@ -95,7 +64,7 @@ const SignUp = () => {
           </label>
           <input
             type="text"
-            {...register("photoUrl", { required: true })}
+            {...register("photoUrl")}
             name="photoUrl"
             // placeholder="Name"
             className="input-section"
@@ -119,7 +88,6 @@ const SignUp = () => {
               },
             })}
             name="email"
-            // placeholder="Name"
             className="input-section"
           />
           {errors.email?.message && <small>{errors.email.message}</small>}

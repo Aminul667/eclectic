@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import './Login.css';
+import "./Login.css";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -54,13 +54,6 @@ const Login = () => {
           <input className="btn btn-primary" type="submit" value="Login" />
         </div>
       </form>
-      {/* <div>
-        {signInError === "auth/wrong-password" ? (
-          <p>Wrong Password</p>
-        ) : (
-          <p>User Not Found</p>
-        )}
-      </div> */}
       <div className="login-container">
         <p>Dont have an account?</p>
         <Link to="/signup" className="link-login">
