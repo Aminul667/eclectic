@@ -7,28 +7,17 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import ReadPost from "../pages/ReadPost/ReadPost";
 import LandingPage from "../pages/LandingPage/LandingPage/LandingPage";
+import LandingPageLayout from "../Layout/LandingPageLayout";
+import ArticleLayout from "../Layout/ArticleLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LandingPage></LandingPage>
-  },
-  {
-    path: "category",
-    element: <Main></Main>,
+    element: <LandingPageLayout></LandingPageLayout>,
     children: [
       {
-        path: ":id",
-        element: <Home></Home>,
-        loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
-      },
-      {
-        path: "my-posts",
-        element: <MyPosts></MyPosts>,
-      },
-      {
-        path: "new-post",
-        element: <NewPost></NewPost>,
+        path: "/",
+        element: <LandingPage></LandingPage>,
       },
       {
         path: "login",
@@ -38,10 +27,40 @@ const router = createBrowserRouter([
         path: "signup",
         element: <SignUp></SignUp>,
       },
+    ],
+  },
+  {
+    path: "category",
+    element: <Main></Main>,
+    children: [
       {
-        path: "blog/:id",
-        element: <ReadPost></ReadPost>
-      }
+        path: ":id",
+        element: <Home></Home>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/categories/${params.id}`),
+      },
+      {
+        path: "my-posts",
+        element: <MyPosts></MyPosts>,
+      },
+      {
+        path: "new-post",
+        element: <NewPost></NewPost>,
+      },
+      // {
+      //   path: "blog/:id",
+      //   element: <ReadPost></ReadPost>,
+      // },
+    ],
+  },
+  {
+    path: "article",
+    element: <ArticleLayout></ArticleLayout>,
+    children: [
+      {
+        path: ":id",
+        element: <ReadPost></ReadPost>,
+      },
     ],
   },
 ]);
