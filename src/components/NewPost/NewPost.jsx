@@ -77,7 +77,7 @@ const NewPost = () => {
               </select>
             </div>
             <textarea
-              className="text-area"
+              className="text-area content-styles"
               autoFocus
               name="textarea"
               value={text}
@@ -93,7 +93,7 @@ const NewPost = () => {
           remarkPlugins={[remarkGfm, remarkMath]}
           rehypePlugins={[rehypeKatex]}
           components={{ code: HighlightSyntax }}
-          className="mark-down"
+          className="mark-down content-styles"
         >
           {text}
         </ReactMarkdown>

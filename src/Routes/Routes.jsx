@@ -39,18 +39,14 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/categories/${params.id}`),
       },
-      {
-        path: "my-posts",
-        element: <MyPosts></MyPosts>,
-      },
+      // {
+      //   path: ":id",
+      //   element: <MyPosts></MyPosts>,
+      // },
       {
         path: "new-post",
         element: <NewPost></NewPost>,
       },
-      // {
-      //   path: "blog/:id",
-      //   element: <ReadPost></ReadPost>,
-      // },
     ],
   },
   {
@@ -58,13 +54,17 @@ const router = createBrowserRouter([
     element: <ArticleLayout></ArticleLayout>,
     children: [
       {
+        path: "my-articles",
+        element: <MyPosts></MyPosts>,
+      },
+      {
         path: ":id",
         element: <ReadPost></ReadPost>,
       },
       {
-        path: 'create-article',
-        element: <NewPost></NewPost>
-      }
+        path: "create-article",
+        element: <NewPost></NewPost>,
+      },
     ],
   },
 ]);

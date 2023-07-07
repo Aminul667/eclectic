@@ -21,9 +21,6 @@ const Home = () => {
   //   },
   // });
 
-  console.log("from Home", id);
-  console.log("home", posts);
-
   // const categories = ['all', 'art', 'mathematics', 'science', 'technology', 'coding', 'algorithm', 'data-structure', 'other']
 
   // const categoriesObject = {

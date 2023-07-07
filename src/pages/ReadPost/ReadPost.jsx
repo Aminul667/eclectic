@@ -9,6 +9,7 @@ import HighlightSyntax from "../../components/HighlightSyntax/HighlightSyntax";
 
 const ReadPost = () => {
   const { id } = useParams();
+  console.log(id)
 
   const {
     data: post = [],
@@ -22,6 +23,8 @@ const ReadPost = () => {
       return res.json();
     },
   });
+
+  console.log(post)
 
   return (
     <div>
