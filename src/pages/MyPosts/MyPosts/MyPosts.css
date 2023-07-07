@@ -1,7 +1,3 @@
-/* .container-articles{
-    margin: auto;
-} */
-
 .info-article {
   display: flex;
   justify-content: space-between;
@@ -24,4 +20,20 @@
 
 .btn-margin{
     margin-right: 20px;
+}
+
+/* for modals */
+.button_wrapper_styles{
+  position: relative;
+  z-index: 1;
+}
+
+.other_content_styles{
+  position: relative;
+  z-index: 2;
+  background-color: red;
+}
+
+.visibility{
+  visibility: hidden;
 }
