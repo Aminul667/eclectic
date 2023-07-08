@@ -11,6 +11,7 @@ const LeftNav = () => {
     coding: "Coding",
     algorithm: "Algorithm",
     "data-structure": "Data Structure",
+    other: "Other",
   };
 
   const categories = Object.keys(categoriesObject);

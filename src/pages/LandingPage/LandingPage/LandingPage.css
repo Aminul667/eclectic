@@ -30,3 +30,22 @@
     height: 100%;
     background-color: rgba(0,0,0,.8);
   }
+
+  .eclectic{
+    font-size: 70px;
+    letter-spacing: 8px;
+    margin-bottom: 50px;
+}
+
+.link-to-article{
+  color: white;
+  padding: 15px;
+  margin-right: 10px;
+  border: 2px solid var(--color-dark);
+  border-radius: 8px;
+}
+
+  .link-to-article:hover{
+    color: white;
+    background-color: var(--color-dark);
+  }
