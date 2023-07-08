@@ -19,7 +19,6 @@ const Modals = ({ open, onClose, modalArticle }) => {
       post: textarea,
     };
 
-    console.log(updatedPost);
     axios
       .patch(
         `http://localhost:5000/users/posts/${modalArticle._id}`,

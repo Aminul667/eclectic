@@ -12,8 +12,6 @@ const NavBar = () => {
       .catch((error) => console.log(error));
   };
 
-  // console.log(user?.email)
-
   return (
     <header className="header">
       <nav className="navbar-container">
@@ -29,13 +27,15 @@ const NavBar = () => {
           <Link to="/category/all" className="group-link">
             Home
           </Link>
-          <Link
-            to="/article/my-articles"
-            state={{ email: user?.email }}
-            className="group-link"
-          >
-            My Articles
-          </Link>
+          {user && (
+            <Link
+              to="/article/my-articles"
+              state={{ email: user?.email }}
+              className="group-link"
+            >
+              My Articles
+            </Link>
+          )}
         </div>
         <div className="profile-container">
           <img src={user?.photoURL} className="profile-img" />

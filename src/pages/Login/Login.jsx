@@ -27,8 +27,6 @@ const Login = () => {
       .catch((error) => setSignInError(error.code));
   };
 
-  console.log(signInError);
-
   return (
     <div className="form-container">
       <h2 className="form-header">Login</h2>

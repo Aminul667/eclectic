@@ -27,8 +27,6 @@ const NewPost = () => {
     const date = new Date();
     const formattedDate = format(date, "MMMM do, yyyy H:mma");
 
-    // console.log(category)
-
     const savedPost = {
       author: user.displayName,
       email: user.email,

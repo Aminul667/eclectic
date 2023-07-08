@@ -7,7 +7,6 @@ const SinglePost = ({ count, article, refetch }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleDelete = (id) => {
-    console.log("Delete is working");
     axios
       .delete(`http://localhost:5000/post/${id}`)
       .then((res) => console.log(res.data))

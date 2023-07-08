@@ -41,5 +41,3 @@ const MyPosts = () => {
 };
 
 export default MyPosts;
-
-console.log('Hello')
