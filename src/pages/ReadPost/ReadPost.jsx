@@ -9,12 +9,11 @@ import HighlightSyntax from "../../components/HighlightSyntax/HighlightSyntax";
 
 const ReadPost = () => {
   const { id } = useParams();
-  console.log(id)
 
   const {
     data: post = [],
-    isLoading,
-    isError,
+    // isLoading,
+    // isError,
     // refetch,
   } = useQuery({
     queryKey: ["posts", id],
@@ -23,8 +22,6 @@ const ReadPost = () => {
       return res.json();
     },
   });
-
-  console.log(post)
 
   return (
     <div>

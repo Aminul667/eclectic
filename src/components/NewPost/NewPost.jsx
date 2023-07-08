@@ -42,7 +42,7 @@ const NewPost = () => {
     axios.post("http://localhost:5000/posts", savedPost).then((data) => {
       if (data.data.insertedId) {
         // reset();
-        alert("Blog has been posted");
+        alert("Article has been posted");
       }
       navigate("/");
     });
