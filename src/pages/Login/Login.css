@@ -5,5 +5,5 @@
 
 .signin-error{
     margin-bottom: 8px;
-    color: red;
+    color: var(--color-error);
 }

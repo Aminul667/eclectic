@@ -9,6 +9,7 @@ import ReadPost from "../pages/ReadPost/ReadPost";
 import LandingPage from "../pages/LandingPage/LandingPage/LandingPage";
 import LandingPageLayout from "../Layout/LandingPageLayout";
 import ArticleLayout from "../Layout/ArticleLayout";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -39,10 +40,6 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/categories/${params.id}`),
       },
-      // {
-      //   path: ":id",
-      //   element: <MyPosts></MyPosts>,
-      // },
       {
         path: "new-post",
         element: <NewPost></NewPost>,
@@ -63,7 +60,7 @@ const router = createBrowserRouter([
       },
       {
         path: "create-article",
-        element: <NewPost></NewPost>,
+        element: <PrivateRoutes><NewPost></NewPost></PrivateRoutes>,
       },
     ],
   },

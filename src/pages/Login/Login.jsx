@@ -27,6 +27,8 @@ const Login = () => {
       .catch((error) => setSignInError(error.code));
   };
 
+  console.log(signInError);
+
   return (
     <div className="form-container">
       <h2 className="form-header">Login</h2>
@@ -45,11 +47,14 @@ const Login = () => {
           </label>
           <input type="password" name="password" className="input-section" />
         </div>
-        {signInError === "auth/wrong-password" ? (
+        {signInError === "auth/wrong-password" && <p className="signin-error">Wrong Password</p>}
+        {signInError === "auth/user-not-found" && <p className="signin-error">User not found. Please Sign Up</p>}
+
+        {/* {signInError === "auth/wrong-password" ? (
           <p className="signin-error">Wrong Password</p>
         ) : (
           <p className="signin-error">User Not Found</p>
-        )}
+        )} */}
         <div>
           <input className="btn btn-primary" type="submit" value="Login" />
         </div>
