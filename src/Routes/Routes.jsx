@@ -38,7 +38,7 @@ const router = createBrowserRouter([
         path: ":id",
         element: <Home></Home>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/categories/${params.id}`),
+          fetch(`https://myblog-server.vercel.app/categories/${params.id}`),
       },
       {
         path: "new-post",

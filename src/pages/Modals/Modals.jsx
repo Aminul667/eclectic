@@ -21,7 +21,7 @@ const Modals = ({ open, onClose, modalArticle }) => {
 
     axios
       .patch(
-        `http://localhost:5000/users/posts/${modalArticle._id}`,
+        `https://myblog-server.vercel.app/users/posts/${modalArticle._id}`,
         updatedPost
       )
       .then((res) => console.log(res.data))

@@ -18,7 +18,7 @@ const ReadPost = () => {
   } = useQuery({
     queryKey: ["posts", id],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/posts/${id}`);
+      const res = await fetch(`https://myblog-server.vercel.app/posts/${id}`);
       return res.json();
     },
   });

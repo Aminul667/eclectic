@@ -22,7 +22,7 @@ const SignUp = () => {
         const loggedUser = result.user;
         updateUserProfile(data.name, data.photoUrl).then(() => {
           const savedUser = { name: data.name, email: data.email };
-          axios.post("http://localhost:5000/users", savedUser).then((data) => {
+          axios.post("https://myblog-server.vercel.app/users", savedUser).then((data) => {
             if (data.data.insertedId) {
               // reset();
               alert("User Created Successfully");

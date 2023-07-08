@@ -37,7 +37,7 @@ const NewPost = () => {
       post: textarea,
     };
 
-    axios.post("http://localhost:5000/posts", savedPost).then((data) => {
+    axios.post("https://myblog-server.vercel.app/posts", savedPost).then((data) => {
       if (data.data.insertedId) {
         // reset();
         alert("Article has been posted");

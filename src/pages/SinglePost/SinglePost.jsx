@@ -8,7 +8,7 @@ const SinglePost = ({ count, article, refetch }) => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:5000/post/${id}`)
+      .delete(`https://myblog-server.vercel.app/post/${id}`)
       .then((res) => console.log(res.data))
       .then((error) => console.log(error));
     alert(`${id} deleted`);
