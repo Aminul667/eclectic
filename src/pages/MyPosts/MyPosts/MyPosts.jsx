@@ -11,7 +11,7 @@ const MyPosts = () => {
     data: myArticles = [],
     isLoading,
     // isError,
-    // refetch,
+    refetch,
   } = useQuery({
     queryKey: ["article"],
     queryFn: async () => {
@@ -31,6 +31,7 @@ const MyPosts = () => {
               key={article._id}
               count={count + 1}
               article={article}
+              refetch={refetch}
             ></SinglePost>
           ))}
         </div>

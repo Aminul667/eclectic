@@ -44,7 +44,7 @@ const NewPost = () => {
         // reset();
         alert("Article has been posted");
       }
-      navigate("/");
+      navigate("/article/my-articles", {state:{email: user.email}});
     });
   };
 

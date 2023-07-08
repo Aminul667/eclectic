@@ -1,14 +1,21 @@
 import { useState } from "react";
 import Modals from "../Modals/Modals";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
-const SinglePost = ({ count, article }) => {
+const SinglePost = ({ count, article, refetch }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleDelete = () => {
+  const handleDelete = (id) => {
     console.log("Delete is working");
+    axios
+      .delete(`http://localhost:5000/post/${id}`)
+      .then((res) => console.log(res.data))
+      .then((error) => console.log(error));
+    alert(`${id} deleted`);
+    refetch();
   };
-  
+
   return (
     <>
       <Modals
@@ -18,7 +25,7 @@ const SinglePost = ({ count, article }) => {
       ></Modals>
       <div className="info-article">
         <div>
-          <span>{count + 1}.</span>
+          <span>{count}.</span>
           <Link
             to={`/article/${article._id}`}
             state={{ id: article._id }}
@@ -34,7 +41,10 @@ const SinglePost = ({ count, article }) => {
           >
             Edit
           </button>
-          <button onClick={handleDelete} className="btn-primary">
+          <button
+            onClick={() => handleDelete(article._id)}
+            className="btn-primary"
+          >
             Delete
           </button>
         </div>
