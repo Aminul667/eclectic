@@ -1,5 +1,6 @@
 import { format } from "date-fns";
 import "./Modals.css";
+import axios from "axios";
 
 const Modals = ({ open, onClose, modalArticle }) => {
   const handleUpdate = () => {
@@ -19,7 +20,15 @@ const Modals = ({ open, onClose, modalArticle }) => {
     };
 
     console.log(updatedPost);
-    onClose();
+    axios
+      .patch(
+        `http://localhost:5000/users/posts/${modalArticle._id}`,
+        updatedPost
+      )
+      .then((res) => console.log(res.data))
+      .catch((error) => console.log(error));
+      onClose();
+      alert("Updated Successfully");
   };
 
   if (!open) return null;
