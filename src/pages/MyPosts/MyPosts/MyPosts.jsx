@@ -22,7 +22,7 @@ const MyPosts = () => {
 
   return (
     <>
-      <div>
+      <div className="container-all-article">
         <h2>Articles: {myArticles.length}</h2>
         {isLoading ? <h1>Loading</h1> : ""}
         <div className="container-articles">

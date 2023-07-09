@@ -1,0 +1,28 @@
+.container-footer {
+  padding: 18px 50px;
+  background-color: var(--color-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+
+.container-copy-right {
+  display: flex;
+  align-items: center;
+}
+
+.icon-hash {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.copy-right-text {
+  font-size: 14px;
+}
+
+.anchor {
+  font-size: 40px;
+}

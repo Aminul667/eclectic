@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 5fr;
     column-gap: 20px;
+    min-height: calc(100vh - 87px);
 }
 
 .btn-article{
