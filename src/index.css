@@ -76,3 +76,9 @@ body {
 .btn-primary:hover {
   background-color: #56c5e4;
 }
+
+.error-message{
+  font-size: 14px;
+  color: var(--color-error);
+  margin-bottom: 10px;
+}

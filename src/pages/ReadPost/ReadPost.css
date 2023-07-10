@@ -1,6 +1,6 @@
-/* .read-container {
-  margin: 20px 50px;
-} */
+.container-read-post{
+  min-height: calc(100vh - 87px);
+}
 
 .post-title {
   font-size: 35px;

@@ -54,7 +54,7 @@ const SignUp = () => {
             // placeholder="Name"
             className="input-section"
           />
-          {errors.name && <span>Name is required</span>}
+          {errors.name && <p className="error-message">Name is required</p>}
         </div>
 
         {/* photo url */}
@@ -69,7 +69,7 @@ const SignUp = () => {
             // placeholder="Name"
             className="input-section"
           />
-          {errors.photoUrl && <span>Photo is required</span>}
+          {/* {errors.photoUrl && <span className="error-message">Photo is required</span>} */}
         </div>
 
         {/* email */}
@@ -90,7 +90,7 @@ const SignUp = () => {
             name="email"
             className="input-section"
           />
-          {errors.email?.message && <small>{errors.email.message}</small>}
+          {errors.email?.message && <p className="error-message">{errors.email.message}</p>}
         </div>
 
         {/* password */}
@@ -115,7 +115,7 @@ const SignUp = () => {
             // placeholder="Name"
             className="input-section"
           />
-          <span>{errors.password?.message}</span>
+          <p className="error-message">{errors.password?.message}</p>
         </div>
 
         <div>

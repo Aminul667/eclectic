@@ -37,14 +37,18 @@ const NewPost = () => {
       post: textarea,
     };
 
-    axios.post("https://myblog-server.vercel.app/posts", savedPost).then((data) => {
-      if (data.data.insertedId) {
-        // reset();
-        alert("Article has been posted");
-      }
-      navigate("/article/my-articles", {state:{email: user.email}});
-    });
+    axios
+      .post("https://myblog-server.vercel.app/posts", savedPost)
+      .then((data) => {
+        if (data.data.insertedId) {
+          // reset();
+          alert("Article has been posted");
+        }
+        navigate("/article/my-articles", { state: { email: user.email } });
+      });
   };
+
+  const defaultText = "This is a default text";
 
   return (
     <>
@@ -63,15 +67,33 @@ const NewPost = () => {
             </div>
             <div>
               <select name="category" className="select-section">
-                <option value="select-category" className="option">--Please select an category--</option>
-                <option value="art" className="option">Art</option>
-                <option value="mathematics" className="option">Mathematics</option>
-                <option value="science" className="option">Science</option>
-                <option value="technology" className="option">Technology</option>
-                <option value="coding" className="option">Coding</option>
-                <option value="algorithm" className="option">Algorithm</option>
-                <option value="data-structure" className="option">Data Structure</option>
-                <option value="other" className="option">Other</option>
+                <option value="select-category" className="option">
+                  --Please select an category--
+                </option>
+                <option value="art" className="option">
+                  Art
+                </option>
+                <option value="mathematics" className="option">
+                  Mathematics
+                </option>
+                <option value="science" className="option">
+                  Science
+                </option>
+                <option value="technology" className="option">
+                  Technology
+                </option>
+                <option value="coding" className="option">
+                  Coding
+                </option>
+                <option value="algorithm" className="option">
+                  Algorithm
+                </option>
+                <option value="data-structure" className="option">
+                  Data Structure
+                </option>
+                <option value="other" className="option">
+                  Other
+                </option>
               </select>
             </div>
             <textarea
@@ -79,12 +101,13 @@ const NewPost = () => {
               autoFocus
               name="textarea"
               value={text}
+              defaultValue={defaultText}
               cols="30"
               rows="10"
               required
               onChange={(e) => setText(e.target.value)}
             ></textarea>
-            <input type="submit" value="Save" className="btn btn-primary"/>
+            <input type="submit" value="Save" className="btn btn-primary" />
           </form>
         </div>
         <ReactMarkdown
@@ -93,7 +116,7 @@ const NewPost = () => {
           components={{ code: HighlightSyntax }}
           className="mark-down content-styles"
         >
-          {text}
+          {text || defaultText}
         </ReactMarkdown>
       </div>
     </>
