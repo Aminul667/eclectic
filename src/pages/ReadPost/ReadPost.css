@@ -12,7 +12,8 @@
 }
 
 .markdown-container > p,
-.markdown-container > li {
+.markdown-container > ol,
+.markdown-container > ul {
   /* font-size: 16px; */
   margin: 20px 0px;
   line-height: 30px;

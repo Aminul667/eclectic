@@ -12,6 +12,7 @@ import { format } from "date-fns";
 import { AuthContext } from "../../providers/AuthProvider";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import rehypeRaw from "rehype-raw";
 
 const NewPost = () => {
   const { user } = useContext(AuthContext);
@@ -48,7 +49,39 @@ const NewPost = () => {
       });
   };
 
-  const defaultText = "This is a default text";
+  const defaultText = `
+  # Rules to write Markdown
+  ---
+  To create a heading use #
+  # Heading 1
+  ## Heading 2
+  ### Heading 3
+  #### Heading 4
+  ##### Heading 5
+  ###### Heading 6
+  This is a paragraph.
+
+  This is another paragraph.
+
+  *This is an italic text* **This is a bold text**
+
+  ***This is bold and italic***
+  \`\`\`js
+  const foo = () => {
+    console.log("Hello");
+    if a < 10 {
+      console.log(10);
+    }
+  }
+  \`\`\`
+
+  1. First item
+  2. Second item
+  3. Third item
+      1. Indented item
+      2. Indented item
+  4. Fourth item
+  `;
 
   return (
     <>
@@ -112,7 +145,7 @@ const NewPost = () => {
         </div>
         <ReactMarkdown
           remarkPlugins={[remarkGfm, remarkMath]}
-          rehypePlugins={[rehypeKatex]}
+          rehypePlugins={[rehypeKatex, rehypeRaw]}
           components={{ code: HighlightSyntax }}
           className="mark-down content-styles"
         >

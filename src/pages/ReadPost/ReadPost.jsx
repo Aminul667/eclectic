@@ -6,6 +6,7 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import HighlightSyntax from "../../components/HighlightSyntax/HighlightSyntax";
+import rehypeRaw from "rehype-raw";
 
 const ReadPost = () => {
   const { id } = useParams();
@@ -29,7 +30,7 @@ const ReadPost = () => {
       <div className="markdown-container">
         <ReactMarkdown
           remarkPlugins={[remarkGfm, remarkMath]}
-          rehypePlugins={[rehypeKatex]}
+          rehypePlugins={[rehypeKatex, rehypeRaw]}
           components={{ code: HighlightSyntax }}
         >
           {post.post}
