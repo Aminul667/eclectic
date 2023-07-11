@@ -21,6 +21,12 @@
   text-align: justify;
 }
 
+.markdown-container > ol,
+.markdown-container > ul{
+  /* margin-left: 20px; */
+  list-style-position: inside;
+}
+
 .markdown-container > h1,
 .markdown-container > h2,
 .markdown-container > h3,

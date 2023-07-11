@@ -50,37 +50,49 @@ const NewPost = () => {
   };
 
   const defaultText = `
-  # Rules to write Markdown
-  ---
-  To create a heading use #
-  # Heading 1
-  ## Heading 2
-  ### Heading 3
-  #### Heading 4
-  ##### Heading 5
-  ###### Heading 6
-  This is a paragraph.
+  # Important Properties
 
-  This is another paragraph.
+  ### Markdown
+  This application accepts Markdown Syntax. To know the syntax please visit the link below.
 
-  *This is an italic text* **This is a bold text**
+  https://www.markdownguide.org/cheat-sheet/
 
-  ***This is bold and italic***
-  \`\`\`js
-  const foo = () => {
-    console.log("Hello");
-    if a < 10 {
-      console.log(10);
-    }
-  }
-  \`\`\`
+  ### Latex for Mathematics
+  This application also supports Latex syntax for writing mathematical formulas. You can write any mathematical formulas and equations using Latex syntax.
 
-  1. First item
-  2. Second item
-  3. Third item
-      1. Indented item
-      2. Indented item
-  4. Fourth item
+  For the inline equation, you have to write latex syntax within two dollar signs. For example $ax^2 + bx + c = 0$
+
+  For the block equation, you have to write latex syntax within double dollar signs. For example
+  $$
+  ax^2 + bx + c = 0
+  $$
+  $$
+  A_{m,n} = 
+  \\begin{pmatrix}
+    a_{1,1} & a_{1,2} & \\cdots & a_{1,n} \\\\
+    a_{2,1} & a_{2,2} & \\cdots & a_{2,n} \\\\
+    \\vdots  & \\vdots  & \\ddots & \\vdots  \\\\
+    a_{m,1} & a_{m,2} & \\cdots & a_{m,n} 
+  \\end{pmatrix}
+  $$
+
+  $$
+  \\begin{align*}
+  y &= (x + 1)(x - 2)\\\\
+  &= x^2 -2x + x - 2\\\\
+  &= x^2 - x - 2
+  \\end{align*}
+  $$
+
+  $$
+  \\frac{\\mathrm d}{\\mathrm d x} \\left( k g(x) \\right)
+  $$
+
+  To know the latex syntax, please visit the link below.
+
+  https://katex.org/docs/supported.html
+
+  Also, you can google to find out more about latex equations.
   `;
 
   return (

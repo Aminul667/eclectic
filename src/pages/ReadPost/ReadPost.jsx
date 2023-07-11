@@ -7,6 +7,7 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import HighlightSyntax from "../../components/HighlightSyntax/HighlightSyntax";
 import rehypeRaw from "rehype-raw";
+import "katex/dist/katex.min.css";
 
 const ReadPost = () => {
   const { id } = useParams();
