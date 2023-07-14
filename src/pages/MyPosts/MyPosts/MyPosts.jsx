@@ -15,7 +15,9 @@ const MyPosts = () => {
   } = useQuery({
     queryKey: ["article"],
     queryFn: async () => {
-      const res = await fetch(`https://myblog-server.vercel.app/users/${email}`);
+      const res = await fetch(
+        `https://myblog-server.vercel.app/users/${email}`
+      );
       return res.json();
     },
   });

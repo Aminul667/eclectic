@@ -57,7 +57,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "my-articles",
-        element: <MyPosts></MyPosts>,
+        element: <PrivateRoutes><MyPosts></MyPosts></PrivateRoutes>,
       },
       {
         path: ":id",
