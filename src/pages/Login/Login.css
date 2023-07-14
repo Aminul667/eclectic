@@ -1,3 +1,15 @@
 .container-login{
     margin-top: 100px;
 }
+
+.forgot-password{
+    font-size: 12px;
+    text-align: right;
+    margin-top: -8px;
+    margin-bottom: 10px;
+}
+
+.forgot-password:hover{
+    text-decoration: underline;
+    text-decoration-color: var(--color-main);
+}

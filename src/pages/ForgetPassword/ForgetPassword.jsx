@@ -14,7 +14,7 @@ const ForgetPassword = () => {
     const email = form.email.value;
     resetPassword(email)
       .then(() => {
-        alert("A Password Reset email has been sent");
+        alert(`A Password Reset email has been sent to ${email}`);
         navigate(-1);
       })
       .catch((error) => {
@@ -46,7 +46,7 @@ const ForgetPassword = () => {
             <input
               className="btn btn-primary"
               type="submit"
-              value="Send Password Reset Email"
+              value="Reset Password"
             />
           </div>
         </form>

@@ -50,7 +50,11 @@ const Login = () => {
               <span className="">Password</span>
             </label>
             <input type="password" name="password" className="input-section" />
-            <Link to="/reset-password">Forget Password</Link>
+          </div>
+          <div className="forgot-password">
+            <Link to="/reset-password">
+              Forgot Password?
+            </Link>
           </div>
           {signInError === "auth/wrong-password" && (
             <p className="error-message">Wrong Password</p>
