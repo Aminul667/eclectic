@@ -10,6 +10,7 @@ import LandingPage from "../pages/LandingPage/LandingPage/LandingPage";
 import LandingPageLayout from "../Layout/LandingPageLayout";
 import ArticleLayout from "../Layout/ArticleLayout";
 import PrivateRoutes from "./PrivateRoutes";
+import ForgetPassword from "../pages/ForgetPassword/ForgetPassword";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "signup",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "reset-password",
+        element: <ForgetPassword></ForgetPassword>
       },
     ],
   },

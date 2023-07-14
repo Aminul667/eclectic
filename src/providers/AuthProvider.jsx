@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -37,6 +38,10 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
+  const resetPassword = (email) => {
+    return sendPasswordResetEmail(auth, email);
+  };
+
   const logOut = () => {
     setLoading(true);
     return signOut(auth);
@@ -56,7 +61,9 @@ const AuthProvider = ({ children }) => {
       // get and set token
       if (currentUser) {
         axios
-          .post("https://myblog-server.vercel.app/jwt", { email: currentUser.email })
+          .post("https://myblog-server.vercel.app/jwt", {
+            email: currentUser.email,
+          })
           .then((data) => {
             localStorage.setItem("access-token", data.data.token);
             setLoading(false);
@@ -77,6 +84,7 @@ const AuthProvider = ({ children }) => {
     createUser,
     signIn,
     googleSignIn,
+    resetPassword,
     logOut,
     updateUserProfile,
   };

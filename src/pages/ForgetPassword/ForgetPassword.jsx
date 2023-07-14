@@ -1,34 +1,29 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import "./ForgetPassword.css";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import "./Login.css";
 
-const Login = () => {
-  const { signIn } = useContext(AuthContext);
-  const navigate = useNavigate();
-  const location = useLocation();
+const ForgetPassword = () => {
+  const { resetPassword } = useContext(AuthContext);
   const [signInError, setSignInError] = useState("");
-
-  const from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
-    const password = form.password.value;
-
-    signIn(email, password)
-      .then((result) => {
-        const user = result.user;
-
-        alert("User logged in successfully");
-        navigate(from, { replace: true });
+    resetPassword(email)
+      .then(() => {
+        alert("A Password Reset email has been sent");
+        navigate(-1);
       })
-      .catch((error) => setSignInError(error.code));
+      .catch((error) => {
+        setSignInError(error.code);
+      });
   };
 
   return (
-    <div className="container-login">
+    <div className="container-reset">
       <div className="form-container">
         <h2 className="form-header">Login</h2>
         <form className="form" onSubmit={handleSubmit}>
@@ -44,22 +39,15 @@ const Login = () => {
               className="input-section"
             />
           </div>
-          {/* password */}
-          <div className="">
-            <label className="label">
-              <span className="">Password</span>
-            </label>
-            <input type="password" name="password" className="input-section" />
-            <Link to="/reset-password">Forget Password</Link>
-          </div>
-          {signInError === "auth/wrong-password" && (
-            <p className="error-message">Wrong Password</p>
-          )}
           {signInError === "auth/user-not-found" && (
             <p className="error-message">User not found. Please Sign Up</p>
           )}
           <div>
-            <input className="btn btn-primary" type="submit" value="Login" />
+            <input
+              className="btn btn-primary"
+              type="submit"
+              value="Send Password Reset Email"
+            />
           </div>
         </form>
         <div className="login-container">
@@ -73,4 +61,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgetPassword;
