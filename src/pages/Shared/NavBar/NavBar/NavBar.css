@@ -1,11 +1,16 @@
-a{
-    color: var(--color-light);
-    text-decoration: none;
+a {
+  color: var(--color-light);
+  text-decoration: none;
 }
 
 .header {
   background-color: var(--color-dark);
 }
+
+.eclectic-link:hover{
+  color: var(--color-main);
+}
+
 .navbar-container {
   padding: 18px 50px;
   display: flex;
@@ -13,19 +18,34 @@ a{
   align-items: center;
 }
 
-.group-link{
-    margin-left: 20px;
+.group-link {
+  margin-left: 20px;
 }
 
-.profile-container{
-    display: flex;
-    align-items: center;
-    gap: 16px;
+.group-link:hover {
+  color: var(--color-main);
 }
 
-.profile-img{
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color: cadetblue;
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: cadetblue;
+}
+
+.btn-logout {
+  color: var(--color-light);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-logout:hover {
+  color: var(--color-main);
 }

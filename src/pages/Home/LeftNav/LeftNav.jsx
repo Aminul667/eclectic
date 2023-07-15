@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./LeftNav.css";
 
 const LeftNav = () => {
@@ -15,12 +15,22 @@ const LeftNav = () => {
   };
 
   const categories = Object.keys(categoriesObject);
+
+  const activeStyle = {
+    color: "#71c6dd",
+  };
+  
   return (
     <div className="category-container">
       <h2 className="category-title">Category</h2>
       {categories.map((category) => (
         <p key={categories.indexOf(category)} className="post-category">
-          <Link to={`/category/${category}`}>{categoriesObject[category]}</Link>
+          <NavLink
+            to={`/category/${category}`}
+            style={({ isActive }) => (isActive ? activeStyle : {})}
+          >
+            {categoriesObject[category]}
+          </NavLink>
         </p>
       ))}
     </div>

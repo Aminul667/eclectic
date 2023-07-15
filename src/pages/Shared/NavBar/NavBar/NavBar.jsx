@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./NavBar.css";
 import { useContext } from "react";
 import { AuthContext } from "../../../../providers/AuthProvider";
@@ -12,35 +12,47 @@ const NavBar = () => {
       .catch((error) => console.log(error));
   };
 
+  const activeStyle = {
+    color: "#71c6dd",
+  };
+
   return (
     <header className="header">
       <nav className="navbar-container">
         <div>
-          <Link to="/">
-            <span>Eclectic</span>
-          </Link>
+          <NavLink
+            to="/"
+            className="eclectic-link"
+          >
+            Eclectic
+          </NavLink>
         </div>
         <div>
           <Link to="" className="group-link">
             Search
           </Link>
-          <Link to="/category/all" className="group-link">
+          <NavLink
+            to="/category/all"
+            className="group-link"
+            style={({ isActive }) => (isActive ? activeStyle : {})}
+          >
             Home
-          </Link>
+          </NavLink>
           {user && (
-            <Link
+            <NavLink
               to="/article/my-articles"
               state={{ email: user?.email }}
               className="group-link"
+              style={({ isActive }) => (isActive ? activeStyle : {})}
             >
               My Articles
-            </Link>
+            </NavLink>
           )}
         </div>
         <div className="profile-container">
           <img src={user?.photoURL} className="profile-img" />
           {user ? (
-            <button onClick={handleLogOut} className="">
+            <button onClick={handleLogOut} className="btn-logout">
               Log Out
             </button>
           ) : (
