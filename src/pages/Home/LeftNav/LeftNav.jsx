@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import "./LeftNav.css";
 
 const LeftNav = () => {
@@ -19,7 +19,7 @@ const LeftNav = () => {
   const activeStyle = {
     color: "#71c6dd",
   };
-  
+
   return (
     <div className="category-container">
       <h2 className="category-title">Category</h2>
