@@ -8,7 +8,7 @@ const Post = ({ post }) => {
         <img src={post.photo} className="img-author" />
         <div>
           <h2 className="author-name">{post.author}</h2>
-          <p>{post.date}</p>
+          <p className="post-date">{post.date}</p>
         </div>
       </div>
       <Link to={`/article/${post._id}`} state={{ id: post._id }} className="post-link-title">{post.title}</Link>

@@ -36,14 +36,14 @@ select:-webkit-autofill:focus {
 input,
 select,
 textarea {
-  color: white;
+  color: var(--color-light);
 }
 
 /*========== base styles ==========*/
 
 * {
   /* font-family: 'Frank Ruhl Libre', serif; */
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -61,7 +61,7 @@ body {
   background-color: #2d2d39;
 }
 
-.container{
+.container {
   margin: 20px 50px;
 }
 
@@ -77,7 +77,7 @@ body {
   background-color: #56c5e4;
 }
 
-.error-message{
+.error-message {
   font-size: 14px;
   color: var(--color-error);
   margin-bottom: 10px;

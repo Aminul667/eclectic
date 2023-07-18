@@ -20,10 +20,7 @@ const NavBar = () => {
     <header className="header">
       <nav className="navbar-container">
         <div>
-          <NavLink
-            to="/"
-            className="eclectic-link"
-          >
+          <NavLink to="/" className="eclectic-link">
             Eclectic
           </NavLink>
         </div>
@@ -31,6 +28,13 @@ const NavBar = () => {
           <Link to="" className="group-link">
             Search
           </Link>
+          {/* <form>
+            <input type="text" />
+            <button type="button">
+              <i className="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </form> */}
+
           <NavLink
             to="/category/all"
             className="group-link"

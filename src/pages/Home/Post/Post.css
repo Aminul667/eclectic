@@ -24,6 +24,11 @@
     /* margin-bottom: 15px; */
 }
 
+.post-date{
+    font-size: 12px;
+    font-style: italic;
+}
+
 .post-link-title{
     font-size: 30px;
     /* margin-top: 16px; */
