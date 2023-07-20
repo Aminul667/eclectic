@@ -25,16 +25,6 @@ const NavBar = () => {
           </NavLink>
         </div>
         <div>
-          <Link to="" className="group-link">
-            Search
-          </Link>
-          {/* <form>
-            <input type="text" />
-            <button type="button">
-              <i className="fa fa-search" aria-hidden="true"></i>
-            </button>
-          </form> */}
-
           <NavLink
             to="/category/all"
             className="group-link"

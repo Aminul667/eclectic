@@ -1,12 +1,29 @@
 import "./Home.css";
 import Post from "../Post/Post";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import LeftNav from "../LeftNav/LeftNav";
+import { useEffect, useRef, useState } from "react";
+import axios from "axios";
 
 const Home = () => {
-  // const { id } = useParams();
-  const posts = useLoaderData();
+  const { id } = useParams();
+  const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
+  const searchRef = useRef(null);
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    axios
+      .get(`https://myblog-server.vercel.app/categories/${id}?search=${search}`)
+      .then((res) => {
+        setPosts(res.data);
+      });
+  }, [id, search]);
+
+  const handleSearch = () => {
+    console.log(searchRef.current.value);
+    setSearch(searchRef.current.value);
+  };
 
   const handleNavigate = () => {
     navigate("/article/create-article");
@@ -18,6 +35,12 @@ const Home = () => {
       <div>
         <div className="container-info">
           <h1>Articles: {posts.length}</h1>
+          <div>
+            <input type="text" ref={searchRef} placeholder="Search" />
+            <button onClick={handleSearch} className="btn">
+              Go
+            </button>
+          </div>
           <button className="btn-article" onClick={handleNavigate}>
             Write a new article
           </button>

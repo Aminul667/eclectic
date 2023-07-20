@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: "reset-password",
-        element: <ForgetPassword></ForgetPassword>
+        element: <ForgetPassword></ForgetPassword>,
       },
     ],
   },
@@ -42,8 +42,8 @@ const router = createBrowserRouter([
       {
         path: ":id",
         element: <Home></Home>,
-        loader: ({ params }) =>
-          fetch(`https://myblog-server.vercel.app/categories/${params.id}`),
+        // loader: ({ params }) =>
+        //   fetch(`https://myblog-server.vercel.app/categories/${params.id}`),
       },
       {
         path: "new-post",
@@ -57,7 +57,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "my-articles",
-        element: <PrivateRoutes><MyPosts></MyPosts></PrivateRoutes>,
+        element: (
+          <PrivateRoutes>
+            <MyPosts></MyPosts>
+          </PrivateRoutes>
+        ),
       },
       {
         path: ":id",
@@ -65,7 +69,11 @@ const router = createBrowserRouter([
       },
       {
         path: "create-article",
-        element: <PrivateRoutes><NewPost></NewPost></PrivateRoutes>,
+        element: (
+          <PrivateRoutes>
+            <NewPost></NewPost>
+          </PrivateRoutes>
+        ),
       },
     ],
   },
