@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import LeftNav from "../LeftNav/LeftNav";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import { FaSearch } from "react-icons/fa/index.esm";
 
 const Home = () => {
   const { id } = useParams();
@@ -21,7 +22,6 @@ const Home = () => {
   }, [id, search]);
 
   const handleSearch = () => {
-    console.log(searchRef.current.value);
     setSearch(searchRef.current.value);
   };
 
@@ -35,10 +35,15 @@ const Home = () => {
       <div>
         <div className="container-info">
           <h1>Articles: {posts.length}</h1>
-          <div>
-            <input type="text" ref={searchRef} placeholder="Search" />
-            <button onClick={handleSearch} className="btn">
-              Go
+          <div className="search-container">
+            <input
+              type="text"
+              ref={searchRef}
+              placeholder="Search"
+              className="search-field"
+            />
+            <button onClick={handleSearch} className="btn-search">
+              <FaSearch></FaSearch>
             </button>
           </div>
           <button className="btn-article" onClick={handleNavigate}>
