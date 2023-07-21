@@ -156,7 +156,7 @@ const NewPost = () => {
           </form>
         </div>
         <ReactMarkdown
-          remarkPlugins={[remarkGfm, remarkMath]}
+          remarkPlugins={[remarkMath, remarkGfm]}
           rehypePlugins={[rehypeKatex, rehypeRaw]}
           components={{ code: HighlightSyntax }}
           className="mark-down content-styles"

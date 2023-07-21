@@ -16,7 +16,7 @@ const Footer = () => {
       </div>
       <div>
         <a
-          href="https://github.com/Aminul667"
+          href="https://www.linkedin.com/in/md-aminul"
           target="_blank"
           rel="noopener noreferrer"
           className="anchor"
