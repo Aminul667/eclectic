@@ -19,9 +19,9 @@
 }
 
 .author-name{
+    font-size: 22px;
     color: var(--color-main);
     margin: 0;
-    /* margin-bottom: 15px; */
 }
 
 .post-date{
@@ -30,8 +30,7 @@
 }
 
 .post-link-title{
-    font-size: 30px;
-    /* margin-top: 16px; */
+    font-size: 25px;
 }
 
 .post-link-title:hover{
