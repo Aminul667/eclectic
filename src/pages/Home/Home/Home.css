@@ -39,10 +39,11 @@
   font-size: 20px;
   font-weight: 500;
   color: var(--color-dark);
-  padding: 16px 10px;
+  padding: 10px;
   border: none;
   display: block;
   background-color: var(--color-main);
+  border: 2px solid var(--color-main);
   border-radius: 8px;
   cursor: pointer;
 }

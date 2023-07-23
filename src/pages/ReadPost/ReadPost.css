@@ -37,6 +37,10 @@
   margin-bottom: 20px;
 }
 
+img{
+  max-width: 70%;
+}
+
 .writer-info {
   text-align: right;
   font-size: 12px;
