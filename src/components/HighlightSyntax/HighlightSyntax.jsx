@@ -8,10 +8,14 @@ const HighlightSyntax = ({ ...props }) => {
   const language = props?.className?.split("-")[1];
 
   return (
-    <div>
+    <div className="code-container">
       <SyntaxHighlighter 
         language={language ?? null} 
         style={atomOneDarkReasonable}
+        customStyle={{borderRadius: "8px"}}
+        // lineProps={{style: {paddingBottom: 8}}}
+        // wrapLines={true}
+        // showLineNumbers={true}
       >
         {children ?? ""}
       </SyntaxHighlighter>
