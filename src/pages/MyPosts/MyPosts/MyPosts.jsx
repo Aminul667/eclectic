@@ -22,8 +22,6 @@ const MyPosts = () => {
     },
   });
 
-  console.log("PyGWalker: Elevating Python Data Visualization to New Heights".length)
-
   return (
     <>
       <div className="container-all-article">

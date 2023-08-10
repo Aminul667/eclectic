@@ -52,8 +52,8 @@ const NewPost = () => {
             showConfirmButton: false,
             timer: 2000,
             toast: true,
-            color:'#e5e5e5',
-            background: '#3f4156',
+            color: "#e5e5e5",
+            background: "#3f4156",
             grow: true,
             timerProgressBar: true,
           });
