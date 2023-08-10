@@ -14,6 +14,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import rehypeRaw from "rehype-raw";
 
+import Swal from "sweetalert2";
+
 const NewPost = () => {
   const { user } = useContext(AuthContext);
   const [text, setText] = useState();
@@ -36,14 +38,25 @@ const NewPost = () => {
       category: category,
       date: formattedDate,
       post: textarea,
+      background: "#2d2d39",
     };
 
     axios
       .post("https://myblog-server.vercel.app/posts", savedPost)
       .then((data) => {
         if (data.data.insertedId) {
-          // reset();
-          alert("Article has been posted");
+          Swal.fire({
+            position: "top",
+            icon: "success",
+            title: "Article has been posted",
+            showConfirmButton: false,
+            timer: 2000,
+            toast: true,
+            color:'#e5e5e5',
+            background: '#3f4156',
+            grow: true,
+            timerProgressBar: true,
+          });
         }
         navigate("/article/my-articles", { state: { email: user.email } });
       });
