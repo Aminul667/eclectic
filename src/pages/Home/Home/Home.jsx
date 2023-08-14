@@ -5,6 +5,7 @@ import LeftNav from "../LeftNav/LeftNav";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { FaSearch } from "react-icons/fa/index.esm";
+import RightNav from "../RightNav/RightNav";
 
 const Home = () => {
   const { id } = useParams();
@@ -54,6 +55,7 @@ const Home = () => {
           <Post key={post._id} post={post}></Post>
         ))}
       </div>
+      <RightNav></RightNav>
     </div>
   );
 };

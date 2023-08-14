@@ -1,22 +1,19 @@
 .category-container {
-  padding: 20px 30px;
+  padding: 0 30px;
   border-radius: 16px;
   background-color: var(--color-dark);
 }
 
 .category-title {
-  margin-bottom: 30px;
+  margin: 0 -30px 30px;
+  padding: 10px 30px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  background-color: var(--color-dark-medium);
 }
 
 .post-category {
   margin-bottom: 10px;
-  /* display: block; */
-  /* background: none;
-    border: none; */
-  /* margin-bottom: 20px; */
-  /* border: 2px solid var(--color-gray); */
-  /* background-color: var(--color-gray); */
-  /* border-radius: 8px; */
 }
 
 .post-category > a:hover {

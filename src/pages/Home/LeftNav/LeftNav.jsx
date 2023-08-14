@@ -1,4 +1,4 @@
-import {  NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./LeftNav.css";
 
 const LeftNav = () => {
@@ -23,6 +23,7 @@ const LeftNav = () => {
   return (
     <div className="category-container">
       <h2 className="category-title">Category</h2>
+
       {categories.map((category) => (
         <p key={categories.indexOf(category)} className="post-category">
           <NavLink
