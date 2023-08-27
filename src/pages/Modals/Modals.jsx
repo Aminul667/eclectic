@@ -1,6 +1,7 @@
 import { format } from "date-fns";
 import "./Modals.css";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const Modals = ({ open, onClose, modalArticle }) => {
   const handleUpdate = () => {
@@ -24,10 +25,27 @@ const Modals = ({ open, onClose, modalArticle }) => {
         `https://myblog-server.vercel.app/users/posts/${modalArticle._id}`,
         updatedPost
       )
-      .then((res) => console.log(res.data))
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.acknowledged) {
+          Swal.fire({
+            position: "top",
+            icon: "success",
+            title: "Article has been updated",
+            showConfirmButton: false,
+            timer: 2000,
+            toast: true,
+            color: "#e5e5e5",
+            background: "#3f4156",
+            grow: true,
+            timerProgressBar: true,
+          });
+          onClose();
+        }
+      })
       .catch((error) => console.log(error));
-      onClose();
-      alert("Updated Successfully");
+    // onClose();
+    // alert("Updated Successfully");
   };
 
   if (!open) return null;
