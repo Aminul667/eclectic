@@ -1,56 +1,61 @@
-.post-container{
-    padding: 20px 30px;
-    margin: 20px 0px;
-    border-radius: 16px;
-    background-color: var(--color-dark);
+.post-container {
+  padding: 20px 30px;
+  margin: 20px 0px;
+  border-radius: 16px;
+  background-color: var(--color-dark);
 }
 
-.author-info{
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.author-info {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.img-author{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+.img-author {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 
-.author-name{
-    font-size: 22px;
-    color: var(--color-main);
-    margin: 0;
+.author-name {
+  font-size: 22px;
+  color: var(--color-main);
+  margin: 0;
 }
 
-.post-date{
-    font-size: 12px;
-    font-style: italic;
+.post-date {
+  font-size: 12px;
+  font-style: italic;
 }
 
-.post-link-title{
-    font-size: 25px;
+.post-link-title {
+  font-size: 25px;
 }
 
-.post-link-title:hover{
-    color: var(--color-gray)
+.post-link-title:hover {
+  color: var(--color-gray);
 }
 
-.like-btn{
-    font-size: 25px;
-    color: var(--color-light);
-    /* color: var(--color-main); */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
 }
 
-.bookmark-btn{
-    font-size: 20px;
-    color: var(--color-light);
-    margin-left: 10px;
+.like-btn {
+  font-size: 30px;
+  color: var(--color-light);
+  cursor: pointer;
 }
 
-.card-top{
-    display: flex;
-    justify-content: space-between;
-    /* align-items: center; */
+.bookmark-btn {
+  font-size: 25px;
+  color: var(--color-light);
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.toggle {
+  color: var(--color-main);
 }

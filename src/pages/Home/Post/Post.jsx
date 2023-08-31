@@ -7,14 +7,7 @@ import { useState } from "react";
 const Post = ({ post }) => {
   const [like, setLike] = useState(false);
   const [bookmark, setBookmark] = useState(false);
-  const style = {
-    color: "#71c6dd",
-  };
 
-  const handleLike = () => {
-    setLike(!like);
-  }
-  
   return (
     <div className="post-container">
       <div className="card-top">
@@ -26,8 +19,14 @@ const Post = ({ post }) => {
           </div>
         </div>
         <div>
-          <AiFillLike className="like-btn"></AiFillLike>
-          <BsBookmarksFill className="bookmark-btn"></BsBookmarksFill>
+          <AiFillLike
+            onClick={() => setLike(!like)}
+            className={`like-btn ${like ? "toggle" : ""}`}
+          ></AiFillLike>
+          <BsBookmarksFill
+            onClick={() => setBookmark(!bookmark)}
+            className={`bookmark-btn ${bookmark ? "toggle" : ""}`}
+          ></BsBookmarksFill>
         </div>
       </div>
       <Link
