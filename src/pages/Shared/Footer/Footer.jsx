@@ -11,7 +11,7 @@ const Footer = () => {
           <FaSlackHash></FaSlackHash>
         </span>
         <p className="copy-right-text">
-          Copyright &copy; {year} - All right reserved by Md. Aminul Islam
+          Copyright &copy; {year} - All right reserved by Md. Aminul Islam (Rahat)
         </p>
       </div>
       <div>

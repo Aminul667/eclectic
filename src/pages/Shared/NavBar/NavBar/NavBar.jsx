@@ -21,7 +21,7 @@ const NavBar = () => {
       <nav className="navbar-container">
         <div>
           <NavLink to="/" className="eclectic-link">
-            Eclectic
+            <span className="e-letter">E</span>clectic
           </NavLink>
         </div>
         <div>
