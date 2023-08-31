@@ -23,8 +23,6 @@ const NavBar = () => {
           <NavLink to="/" className="eclectic-link">
             Eclectic
           </NavLink>
-        </div>
-        <div>
           <NavLink
             to="/category/all"
             className="group-link"
@@ -32,6 +30,15 @@ const NavBar = () => {
           >
             Home
           </NavLink>
+        </div>
+        <div>
+          {/* <NavLink
+            to="/category/all"
+            className="group-link"
+            style={({ isActive }) => (isActive ? activeStyle : {})}
+          >
+            Home
+          </NavLink> */}
           {user && (
             <NavLink
               to="/article/my-articles"
