@@ -1,0 +1,8 @@
+.link-article {
+  margin-left: 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+.link-article:hover {
+  color: var(--color-gray);
+}

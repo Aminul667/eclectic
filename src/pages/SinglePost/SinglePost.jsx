@@ -3,6 +3,7 @@ import Modals from "../Modals/Modals";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+import "./SinglePost.css";
 
 const SinglePost = ({ count, article, refetch }) => {
   const [isOpen, setIsOpen] = useState(false);

@@ -7,13 +7,13 @@ a {
   background-color: var(--color-dark);
 }
 
-.e-letter{
+.e-letter {
   color: var(--color-main);
 }
 
-.eclectic-link{
+.eclectic-link {
   font-size: 30px;
-  transition: color .3s ease-in-out
+  transition: color 0.3s ease-in-out;
 }
 
 .eclectic-link:hover {
@@ -30,7 +30,7 @@ a {
 .group-link {
   font-size: 16px;
   margin-left: 20px;
-  transition: color .3s ease-in-out
+  transition: color 0.3s ease-in-out;
 }
 
 .group-link:hover {

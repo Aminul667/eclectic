@@ -15,14 +15,6 @@
   border-bottom: 2px solid var(--color-dark);
 }
 
-.link-article{
-    margin-left: 20px;
-}
-
-.link-article:hover {
-  color: var(--color-gray);
-}
-
 .btn-margin{
     margin-right: 20px;
 }
