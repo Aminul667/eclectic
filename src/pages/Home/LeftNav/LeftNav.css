@@ -16,6 +16,10 @@
   margin-bottom: 10px;
 }
 
+.post-category > a {
+  transition: color 0.3s ease-in-out;
+}
+
 .post-category > a:hover {
   color: var(--color-main);
 }
