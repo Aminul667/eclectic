@@ -36,3 +36,21 @@
 .post-link-title:hover{
     color: var(--color-gray)
 }
+
+.like-btn{
+    font-size: 25px;
+    color: var(--color-light);
+    /* color: var(--color-main); */
+}
+
+.bookmark-btn{
+    font-size: 20px;
+    color: var(--color-light);
+    margin-left: 10px;
+}
+
+.card-top{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
