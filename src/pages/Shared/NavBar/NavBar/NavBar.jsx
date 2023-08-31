@@ -23,6 +23,8 @@ const NavBar = () => {
           <NavLink to="/" className="eclectic-link">
             Eclectic
           </NavLink>
+        </div>
+        <div>
           <NavLink
             to="/category/all"
             className="group-link"
@@ -30,15 +32,6 @@ const NavBar = () => {
           >
             Home
           </NavLink>
-        </div>
-        <div>
-          {/* <NavLink
-            to="/category/all"
-            className="group-link"
-            style={({ isActive }) => (isActive ? activeStyle : {})}
-          >
-            Home
-          </NavLink> */}
           {user && (
             <NavLink
               to="/article/my-articles"
@@ -49,17 +42,17 @@ const NavBar = () => {
               My Articles
             </NavLink>
           )}
-        </div>
-        <div className="profile-container">
-          <img src={user?.photoURL} className="profile-img" />
           {user ? (
-            <button onClick={handleLogOut} className="btn-logout">
+            <button onClick={handleLogOut} className="group-link btn-logout">
               Log Out
             </button>
           ) : (
-            <Link to="/login">Login</Link>
+            <Link to="/login" className="group-link">
+              Login
+            </Link>
           )}
         </div>
+        <img src={user?.photoURL} className="profile-img" />
       </nav>
     </header>
   );
