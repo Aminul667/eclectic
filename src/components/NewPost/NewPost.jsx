@@ -73,9 +73,9 @@ const NewPost = () => {
   ### Latex for Mathematics
   This application also supports Latex syntax for writing mathematical formulas. You can write any mathematical formulas and equations using Latex syntax.
 
-  For the inline equation, you have to write latex syntax within two dollar signs. For example $ax^2 + bx + c = 0$
+  You must write latex syntax within two dollar signs for the inline equation. For example $ax^2 + bx + c = 0$
 
-  For the block equation, you have to write latex syntax within double dollar signs. For example
+  You have to write latex syntax within double dollar signs for the block equation. For example
   $$
   ax^2 + bx + c = 0
   $$
@@ -101,11 +101,11 @@ const NewPost = () => {
   \\frac{\\mathrm d}{\\mathrm d x} \\left( k g(x) \\right)
   $$
 
-  To know the latex syntax, please visit the link below.
+  To learn the latex syntax, please visit the link below.
 
   https://katex.org/docs/supported.html
 
-  Also, you can google to find out more about latex equations.
+  Also, you can use Google to find out more about latex equations.
   `;
 
   return (

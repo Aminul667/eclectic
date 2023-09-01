@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
   const {
@@ -22,18 +23,44 @@ const SignUp = () => {
         const loggedUser = result.user;
         updateUserProfile(data.name, data.photoUrl).then(() => {
           const savedUser = { name: data.name, email: data.email };
-          axios.post("https://myblog-server.vercel.app/users", savedUser).then((data) => {
-            if (data.data.insertedId) {
-              // reset();
-              alert("User Created Successfully");
-            }
-            navigate("/");
-          });
+          axios
+            .post("https://myblog-server.vercel.app/users", savedUser)
+            .then((data) => {
+              if (data.data.insertedId) {
+                // reset();
+                Swal.fire({
+                  position: "top",
+                  icon: "success",
+                  title: "User created successfully",
+                  showConfirmButton: false,
+                  timer: 2000,
+                  toast: true,
+                  color: "#e5e5e5",
+                  background: "#3f4156",
+                  grow: true,
+                  timerProgressBar: true,
+                });
+              }
+              navigate("/");
+            });
         });
       })
       .catch((error) => {
         if (error) {
-          alert("User already exists. Please login!");
+          // alert("User already exists. Please login!");
+          Swal.fire({
+            position: "top",
+            icon: "info",
+            title: "User already exists. Please login!",
+            showConfirmButton: true,
+            confirmButtonColor: "#71c6dd",
+            // timer: 2000,
+            // toast: true,
+            color: "#e5e5e5",
+            background: "#3f4156",
+            grow: true,
+            // timerProgressBar: true,
+          });
         }
       });
   };
@@ -90,7 +117,9 @@ const SignUp = () => {
             name="email"
             className="input-section"
           />
-          {errors.email?.message && <p className="error-message">{errors.email.message}</p>}
+          {errors.email?.message && (
+            <p className="error-message">{errors.email.message}</p>
+          )}
         </div>
 
         {/* password */}
@@ -106,9 +135,9 @@ const SignUp = () => {
               validate: {
                 maxLength: (v) =>
                   v.length >= 8 || "Password should be at least 8 character",
-                matchPattern: (v) =>
-                  /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/.test(v) ||
-                  "Password should contain at least one upper case latter, one lowercase latter and one special character",
+                // matchPattern: (v) =>
+                //   /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/.test(v) ||
+                //   "Password should contain at least one upper case latter, one lowercase latter and one special character",
               },
             })}
             name="password"

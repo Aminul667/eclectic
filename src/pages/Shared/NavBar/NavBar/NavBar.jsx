@@ -52,7 +52,7 @@ const NavBar = () => {
             </Link>
           )}
         </div>
-        <img src={user?.photoURL} className="profile-img" />
+        {user && <img src={user?.photoURL} className="profile-img" />}
       </nav>
     </header>
   );
