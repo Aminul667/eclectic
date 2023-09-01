@@ -31,7 +31,6 @@ const NewPost = () => {
     const formattedDate = format(date, "MMMM do, yyyy H:mma");
 
     if (category == "select-category") {
-      console.log(category);
       Swal.fire({
         icon: "error",
         title: "Please Select a category",
@@ -40,7 +39,6 @@ const NewPost = () => {
         grow: true,
       });
     } else {
-      console.log(category);
       const savedPost = {
         author: user.displayName,
         email: user.email,

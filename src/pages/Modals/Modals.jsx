@@ -26,7 +26,6 @@ const Modals = ({ open, onClose, modalArticle }) => {
         updatedPost
       )
       .then((res) => {
-        console.log(res.data);
         if (res.data.acknowledged) {
           Swal.fire({
             position: "top",
@@ -44,8 +43,6 @@ const Modals = ({ open, onClose, modalArticle }) => {
         }
       })
       .catch((error) => console.log(error));
-    // onClose();
-    // alert("Updated Successfully");
   };
 
   if (!open) return null;
