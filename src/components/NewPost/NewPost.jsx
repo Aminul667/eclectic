@@ -30,36 +30,48 @@ const NewPost = () => {
     const date = new Date();
     const formattedDate = format(date, "MMMM do, yyyy H:mma");
 
-    const savedPost = {
-      author: user.displayName,
-      email: user.email,
-      photo: user.photoURL,
-      title: title,
-      category: category,
-      date: formattedDate,
-      post: textarea,
-      background: "#2d2d39",
-    };
-
-    axios
-      .post("https://myblog-server.vercel.app/posts", savedPost)
-      .then((data) => {
-        if (data.data.insertedId) {
-          Swal.fire({
-            position: "top",
-            icon: "success",
-            title: "Article has been posted",
-            showConfirmButton: false,
-            timer: 2000,
-            toast: true,
-            color: "#e5e5e5",
-            background: "#3f4156",
-            grow: true,
-            timerProgressBar: true,
-          });
-        }
-        navigate("/article/my-articles", { state: { email: user.email } });
+    if (category == "select-category") {
+      console.log(category);
+      Swal.fire({
+        icon: "error",
+        title: "Please Select a category",
+        color: "#e5e5e5",
+        background: "#3f4156",
+        grow: true,
       });
+    } else {
+      console.log(category);
+      const savedPost = {
+        author: user.displayName,
+        email: user.email,
+        photo: user.photoURL,
+        title: title,
+        category: category,
+        date: formattedDate,
+        post: textarea,
+        background: "#2d2d39",
+      };
+
+      axios
+        .post("https://myblog-server.vercel.app/posts", savedPost)
+        .then((data) => {
+          if (data.data.insertedId) {
+            Swal.fire({
+              position: "top",
+              icon: "success",
+              title: "Article has been posted",
+              showConfirmButton: false,
+              timer: 2000,
+              toast: true,
+              color: "#e5e5e5",
+              background: "#3f4156",
+              grow: true,
+              timerProgressBar: true,
+            });
+          }
+          navigate("/article/my-articles", { state: { email: user.email } });
+        });
+    }
   };
 
   const defaultText = `
@@ -126,7 +138,7 @@ const NewPost = () => {
             <div>
               <select name="category" className="select-section">
                 <option value="select-category" className="option">
-                  --Please select an category--
+                  --Please select a category--
                 </option>
                 <option value="art" className="option">
                   Art
