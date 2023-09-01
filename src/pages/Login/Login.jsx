@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import "./Login.css";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -21,7 +22,19 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
 
-        alert("User logged in successfully");
+        // alert("User logged in successfully");
+        Swal.fire({
+          position: "top",
+          icon: "success",
+          title: "User logged in successfully",
+          showConfirmButton: false,
+          timer: 2000,
+          toast: true,
+          color: "#e5e5e5",
+          background: "#3f4156",
+          grow: true,
+          timerProgressBar: true,
+        });
         navigate(from, { replace: true });
       })
       .catch((error) => setSignInError(error.code));
@@ -52,9 +65,7 @@ const Login = () => {
             <input type="password" name="password" className="input-section" />
           </div>
           <div className="forgot-password">
-            <Link to="/reset-password">
-              Forgot Password?
-            </Link>
+            <Link to="/reset-password">Forgot Password?</Link>
           </div>
           {signInError === "auth/wrong-password" && (
             <p className="error-message">Wrong Password</p>

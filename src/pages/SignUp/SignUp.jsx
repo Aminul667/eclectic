@@ -47,7 +47,6 @@ const SignUp = () => {
       })
       .catch((error) => {
         if (error) {
-          // alert("User already exists. Please login!");
           Swal.fire({
             position: "top",
             icon: "info",
