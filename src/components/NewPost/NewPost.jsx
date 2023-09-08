@@ -85,7 +85,7 @@ const NewPost = () => {
 
   You must write latex syntax within two dollar signs for the inline equation. For example $ax^2 + bx + c = 0$
 
-  You have to write latex syntax within double dollar signs for the block equation. For example
+  You must write the block equation's latex syntax within double dollar signs. For example
   $$
   ax^2 + bx + c = 0
   $$
