@@ -67,6 +67,11 @@ td {
   border: 1px solid var(--color-dark-light);
 }
 
+blockquote{
+  padding: 2px 8px;
+  border-left: 8px var(--color-dark) solid;
+} 
+
 .container {
   margin: 20px 50px;
 }
