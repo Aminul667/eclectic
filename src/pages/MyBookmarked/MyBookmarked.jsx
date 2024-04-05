@@ -7,7 +7,6 @@ import axios from "axios";
 const MyBookmarked = () => {
   const params = useLocation();
   const email = params.state.email;
-//   console.log(params);
 
   const {
     data: myBookmarks = [],
@@ -23,7 +22,6 @@ const MyBookmarked = () => {
   });
 
   const handleDelete = (id) => {
-    console.log(id)
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -55,7 +53,7 @@ const MyBookmarked = () => {
               refetch();
             }
           })
-          .then((error) => console.log(error));
+          .then((error) => console.log(error))
       }
     });
   };

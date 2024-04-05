@@ -5,30 +5,41 @@ import { BsBookmarksFill } from "react-icons/bs";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const Post = ({ post }) => {
   const [like, setLike] = useState(false);
   const [bookmark, setBookmark] = useState(false);
   const { user } = useContext(AuthContext);
 
-  // console.log(post);
-  // console.log(user?.email);
-
   const handleBookmark = (post) => {
     const bookmarkedPost = {
       articleId: post._id,
       title: post.title,
       authorEmail: post.email,
-      bookmarkedBy: user?.email
-    }
-    setBookmark(!bookmark);
-    // bookmarkedPost.bookmarkedBy = user.email;
-    console.log(bookmarkedPost);
+      bookmarkedBy: user?.email,
+    };
 
+    setBookmark(!bookmark);
+    
     axios
       .post("http://localhost:5000/bookmarks", bookmarkedPost)
       .then((data) => {
-        console.log(data)
+        if (data.data.insertedId) {
+          Swal.fire({
+            position: "top",
+            icon: "success",
+            title: "Article has been bookmarked",
+            showConfirmButton: false,
+            timer: 2000,
+            toast: true,
+            color: "#e5e5e5",
+            background: "#3f4156",
+            grow: true,
+            timerProgressBar: true,
+          });
+        }
+        // navigate("/article/my-articles", { state: { email: user.email } });
       });
   };
 
