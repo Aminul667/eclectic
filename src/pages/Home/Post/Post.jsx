@@ -12,11 +12,17 @@ const Post = ({ post }) => {
   const { user } = useContext(AuthContext);
 
   // console.log(post);
-  console.log(user?.email);
+  // console.log(user?.email);
 
-  const handleBookmark = (bookmarkedPost) => {
+  const handleBookmark = (post) => {
+    const bookmarkedPost = {
+      articleId: post._id,
+      title: post.title,
+      authorEmail: post.email,
+      bookmarkedBy: user?.email
+    }
     setBookmark(!bookmark);
-    bookmarkedPost.bookmarkedBy = user.email;
+    // bookmarkedPost.bookmarkedBy = user.email;
     console.log(bookmarkedPost);
 
     axios
