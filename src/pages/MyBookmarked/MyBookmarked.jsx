@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./MyBookmarked.css";
 
 const MyBookmarked = () => {
@@ -33,10 +33,19 @@ const MyBookmarked = () => {
           </tr>
         </thead>
         <tbody>
-          {myBookmarks.map((bookmark, count=0) => (
+          {myBookmarks.map((bookmark, count = 0) => (
             <tr key={bookmark._id}>
-              <td>{count+1}</td>
-              <td>{bookmark?.title}</td>
+              <td>{count + 1}</td>
+              <td>
+                {/* {bookmark?.title} */}
+                <Link
+                  to={`/article/${bookmark.articleId}`}
+                  state={{ id: bookmark.articleId }}
+                  className="link-article"
+                >
+                  {bookmark?.title}
+                </Link>
+              </td>
               <td>
                 <button className="btn-primary">Delete</button>
               </td>
