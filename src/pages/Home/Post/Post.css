@@ -21,7 +21,8 @@
 .img-avatar {
   background-color: var(--color-dark-medium);
   color: var(--color-light);
-  font-size: 40px;
+  font-size: 35px;
+  font-family: "Pacifico", cursive;
   display: flex;
   justify-content: center;
   align-items: center;
