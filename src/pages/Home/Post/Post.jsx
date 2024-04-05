@@ -2,11 +2,29 @@ import { Link } from "react-router-dom";
 import "./Post.css";
 import { AiFillLike } from "react-icons/ai";
 import { BsBookmarksFill } from "react-icons/bs";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
+import axios from "axios";
 
 const Post = ({ post }) => {
   const [like, setLike] = useState(false);
   const [bookmark, setBookmark] = useState(false);
+  const { user } = useContext(AuthContext);
+
+  // console.log(post);
+  console.log(user?.email);
+
+  const handleBookmark = (bookmarkedPost) => {
+    setBookmark(!bookmark);
+    bookmarkedPost.bookmarkedBy = user.email;
+    console.log(bookmarkedPost);
+
+    axios
+      .post("http://localhost:5000/bookmarks", bookmarkedPost)
+      .then((data) => {
+        console.log(data)
+      });
+  };
 
   return (
     <div className="post-container">
@@ -29,7 +47,7 @@ const Post = ({ post }) => {
             className={`like-btn ${like ? "toggle" : ""}`}
           ></AiFillLike>
           <BsBookmarksFill
-            onClick={() => setBookmark(!bookmark)}
+            onClick={() => handleBookmark(post)}
             className={`bookmark-btn ${bookmark ? "toggle" : ""}`}
           ></BsBookmarksFill>
         </div>

@@ -11,6 +11,7 @@ import LandingPageLayout from "../Layout/LandingPageLayout";
 import ArticleLayout from "../Layout/ArticleLayout";
 import PrivateRoutes from "./PrivateRoutes";
 import ForgetPassword from "../pages/ForgetPassword/ForgetPassword";
+import MyBookmarked from "../pages/MyBookmarked/MyBookmarked";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <MyPosts></MyPosts>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "my-bookmarks",
+        element: (
+          <PrivateRoutes>
+            <MyBookmarked></MyBookmarked>
           </PrivateRoutes>
         ),
       },

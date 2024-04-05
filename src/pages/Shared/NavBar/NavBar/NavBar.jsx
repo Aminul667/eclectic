@@ -33,6 +33,7 @@ const NavBar = () => {
             Home
           </NavLink>
           {user && (
+            <>
             <NavLink
               to="/article/my-articles"
               state={{ email: user?.email }}
@@ -41,6 +42,15 @@ const NavBar = () => {
             >
               My Articles
             </NavLink>
+            <NavLink
+              to="/article/my-bookmarks"
+              state={{ email: user?.email }}
+              className="group-link"
+              style={({ isActive }) => (isActive ? activeStyle : {})}
+            >
+              My Bookmarks
+            </NavLink>
+            </>
           )}
           {user ? (
             <button onClick={handleLogOut} className="group-link btn-logout">

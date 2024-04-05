@@ -1,0 +1,13 @@
+.bookmark-container{
+    min-height: calc(100vh - 87px);
+}
+
+.bookmarked-table {
+  max-width: 800px;
+  width: 100%;
+  border-spacing: 1;
+}
+
+.bookmarked-table > thead{
+    background-color: var(--color-dark-medium);
+}
