@@ -8,8 +8,6 @@ const Post = ({ post }) => {
   const [like, setLike] = useState(false);
   const [bookmark, setBookmark] = useState(false);
 
-  console.log(post.author[0]);
-
   return (
     <div className="post-container">
       <div className="card-top">
