@@ -8,11 +8,18 @@ const Post = ({ post }) => {
   const [like, setLike] = useState(false);
   const [bookmark, setBookmark] = useState(false);
 
+  console.log(post.author[0]);
+
   return (
     <div className="post-container">
       <div className="card-top">
         <div className="author-info">
-          <img src={post.photo} className="img-author" />
+          {/* {post.photo && <img src={post.photo} className="img-author" />} */}
+          {post.photo ? (
+            <img src={post.photo} className="img-author" />
+          ) : (
+            <div className="img-avatar img-author">{post.author[0]}</div>
+          )}
           <div>
             <h2 className="author-name">{post.author}</h2>
             <p className="post-date">{post.date}</p>

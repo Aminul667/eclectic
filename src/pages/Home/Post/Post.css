@@ -18,6 +18,15 @@
   border-radius: 50%;
 }
 
+.img-avatar {
+  background-color: var(--color-dark-light);
+  color: #ffffff;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .author-name {
   font-size: 22px;
   color: var(--color-main);

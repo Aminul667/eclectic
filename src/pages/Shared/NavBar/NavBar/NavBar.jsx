@@ -16,6 +16,8 @@ const NavBar = () => {
     color: "#71c6dd",
   };
 
+  console.log(user?.photoURL);
+
   return (
     <header className="header">
       <nav className="navbar-container">
