@@ -45,6 +45,15 @@ a {
   background-color: cadetblue;
 }
 
+.profile-avatar {
+  background-color: var(--color-dark-medium);
+  color: var(--color-light);
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn-logout {
   color: var(--color-light);
   background: none;

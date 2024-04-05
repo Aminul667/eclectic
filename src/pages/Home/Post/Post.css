@@ -19,8 +19,8 @@
 }
 
 .img-avatar {
-  background-color: var(--color-dark-light);
-  color: #ffffff;
+  background-color: var(--color-dark-medium);
+  color: var(--color-light);
   font-size: 40px;
   display: flex;
   justify-content: center;

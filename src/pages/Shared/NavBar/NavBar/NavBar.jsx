@@ -16,7 +16,7 @@ const NavBar = () => {
     color: "#71c6dd",
   };
 
-  console.log(user?.photoURL);
+  console.log(user?.displayName[0]);
 
   return (
     <header className="header">
@@ -54,7 +54,13 @@ const NavBar = () => {
             </Link>
           )}
         </div>
-        {user && <img src={user?.photoURL} className="profile-img" />}
+        {/* {user && <img src={user?.photoURL} className="profile-img" />} */}
+        {user &&
+          (user.photoURL ? (
+            <img src={user.photoURL} className="profile-img" />
+          ) : (
+            <div className="profile-img profile-avatar">{user.displayName[0]}</div>
+          ))}
       </nav>
     </header>
   );
