@@ -23,7 +23,7 @@ const Post = ({ post }) => {
     setBookmark(!bookmark);
     
     axios
-      .post("http://localhost:5000/bookmarks", bookmarkedPost)
+      .post("https://myblog-server.vercel.app/bookmarks", bookmarkedPost)
       .then((data) => {
         if (data.data.insertedId) {
           Swal.fire({

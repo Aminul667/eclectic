@@ -16,7 +16,7 @@ const MyBookmarked = () => {
   } = useQuery({
     queryKey: ["bookmark"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/bookmarks/${email}`);
+      const res = await fetch(`https://myblog-server.vercel.app/bookmarks/${email}`);
       return res.json();
     },
   });
@@ -35,7 +35,7 @@ const MyBookmarked = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:5000/bookmark/${id}`)
+          .delete(`https://myblog-server.vercel.app/bookmark/${id}`)
           .then((res) => {
             if (res.data.deletedCount > 0) {
               Swal.fire({
