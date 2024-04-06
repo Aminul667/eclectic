@@ -21,7 +21,7 @@ const Post = ({ post }) => {
     };
 
     setBookmark(!bookmark);
-    
+
     axios
       .post("https://myblog-server.vercel.app/bookmarks", bookmarkedPost)
       .then((data) => {
@@ -63,10 +63,16 @@ const Post = ({ post }) => {
             onClick={() => setLike(!like)}
             className={`like-btn ${like ? "toggle" : ""}`}
           ></AiFillLike>
-          <BsBookmarksFill
+          {/* <BsBookmarksFill
             onClick={() => handleBookmark(post)}
             className={`bookmark-btn ${bookmark ? "toggle" : ""}`}
-          ></BsBookmarksFill>
+          ></BsBookmarksFill> */}
+          {user && (
+            <BsBookmarksFill
+              onClick={() => handleBookmark(post)}
+              className={`bookmark-btn ${bookmark ? "toggle" : ""}`}
+            ></BsBookmarksFill>
+          )}
         </div>
       </div>
       <Link
